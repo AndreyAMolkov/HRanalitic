@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="paneStart" xmlns="http://javafx.com/javafx/8"
+            fx:controller="view.Controllers">
+    <children>
+        <Pane prefHeight="869.0" prefWidth="1850.0">
+            <children>
+                <MenuBar layoutX="26.0" layoutY="2.0" prefHeight="25.0" prefWidth="888.0">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Настройки">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About"/>
+                            </items>
+                        </Menu>
+                        <Menu fx:id="menuReport" mnemonicParsing="false" text="Отчёты"/>
+                    </menus>
+                    <contextMenu>
+                        <ContextMenu>
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Unspecified Action"/>
+                                <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
+                                    <content>
+                                        <CheckBox text="Click Me"/>
+                                    </content>
+                                </CustomMenuItem>
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </MenuBar>
+                <TabPane layoutX="22.0" layoutY="32.0" prefHeight="829.0" prefWidth="1800.0"
+                         tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Новый Кандидат">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <GridPane layoutX="-6.0" layoutY="20.0" prefHeight="781.0" prefWidth="1250.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="292.0" minHeight="10.0" prefHeight="271.0"
+                                                                vgrow="SOMETIMES"/>
+                                                <RowConstraints maxHeight="520.0" minHeight="0.0" prefHeight="353.0"
+                                                                vgrow="SOMETIMES"/>
+                                                <RowConstraints maxHeight="520.0" minHeight="0.0" prefHeight="136.0"
+                                                                vgrow="SOMETIMES"/>
+                                            </rowConstraints>
+                                            <children>
+                                                <GridPane>
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0"
+                                                                           minWidth="10.0" prefWidth="175.0"/>
+                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="450.0"
+                                                                           minWidth="10.0" prefWidth="450.0"/>
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                        vgrow="SOMETIMES"/>
+                                                    </rowConstraints>
+                                                    <GridPane.margin>
+                                                        <Insets/>
+                                                    </GridPane.margin>
+                                                    <opaqueInsets>
+                                                        <Insets/>
+                                                    </opaqueInsets>
+                                                    <children>
+                                                        <TextField prefHeight="27.0" prefWidth="175.0"
+                                                                   text="Фамилия Имя Отчество"/>
+                                                        <TextField text="Дата рождения" GridPane.rowIndex="1"/>
+                                                        <TextField text="Сотовый телефон" GridPane.rowIndex="2"/>
+                                                        <TextField text="Источник" GridPane.rowIndex="3"/>
+                                                        <TextField text="Инициатива" GridPane.rowIndex="4"/>
+                                                        <TextField text="Проект" GridPane.rowIndex="5"/>
+                                                        <ChoiceBox fx:id="choiceBoxSource" prefHeight="25.0"
+                                                                   prefWidth="477.0" GridPane.columnIndex="1"
+                                                                   GridPane.rowIndex="3"/>
+                                                        <ChoiceBox fx:id="choiceBoxInitiative" prefHeight="25.0"
+                                                                   prefWidth="463.0" GridPane.columnIndex="1"
+                                                                   GridPane.rowIndex="4"/>
+                                                        <ChoiceBox fx:id="choiceBoxProject" prefHeight="25.0"
+                                                                   prefWidth="460.0" GridPane.columnIndex="1"
+                                                                   GridPane.rowIndex="5"/>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.columnIndex="1">
+                                                            <children>
+                                                                <TextArea fx:id="textAreaFIO" prefHeight="23.0"
+                                                                          prefWidth="450.0"
+                                                                          promptText="Фамилия Имя Отчество"/>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                            <children>
+                                                                <TextArea fx:id="textAreaBirthday" prefHeight="23.0"
+                                                                          prefWidth="399.0" promptText="дд.мм.гггг"/>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0"
+                                                              GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                            <children>
+                                                                <TextArea fx:id="textAreaPhone" prefHeight="23.0"
+                                                                          prefWidth="450.0"
+                                                                          promptText="8-000-000-00-00"/>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </GridPane>
+                                                <TitledPane prefHeight="342.0" prefWidth="625.0" text="Звонок"
+                                                            GridPane.rowIndex="1">
+                                                    <content>
+                                                        <GridPane alignment="CENTER_RIGHT" prefHeight="253.0"
+                                                                  prefWidth="533.0" GridPane.rowIndex="1">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0"
+                                                                                   minWidth="10.0" prefWidth="177.0"/>
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0"
+                                                                                   minWidth="10.0" prefWidth="448.0"/>
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints maxHeight="95.0" minHeight="10.0"
+                                                                                prefHeight="39.0" vgrow="SOMETIMES"/>
+                                                                <RowConstraints maxHeight="132.0" minHeight="10.0"
+                                                                                prefHeight="58.0" vgrow="SOMETIMES"/>
+                                                                <RowConstraints maxHeight="148.0" minHeight="10.0"
+                                                                                prefHeight="102.0" vgrow="SOMETIMES"/>
+                                                                <RowConstraints maxHeight="92.0" minHeight="10.0"
+                                                                                prefHeight="92.0" vgrow="SOMETIMES"/>
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <Label alignment="TOP_LEFT" text="Дозвон">
+                                                                    <opaqueInsets>
+                                                                        <Insets/>
+                                                                    </opaqueInsets>
+                                                                    <padding>
+                                                                        <Insets left="10.0"/>
+                                                                    </padding>
+                                                                </Label>
+                                                                <VBox alignment="CENTER_LEFT" prefHeight="54.0"
+                                                                      prefWidth="437.0" GridPane.columnIndex="1">
+                                                                    <children>
+                                                                        <RadioButton fx:id="radioButtonCallYes"
+                                                                                     mnemonicParsing="false"
+                                                                                     onAction="#onRadioButtonAnswerYes"
+                                                                                     text="да"/>
+                                                                        <RadioButton fx:id="radioButtonCallNo"
+                                                                                     mnemonicParsing="false"
+                                                                                     onAction="#onRadioButtonAnswerNo"
+                                                                                     text="нет"/>
+                                                                    </children>
+                                                                </VBox>
+                                                                <Label alignment="TOP_LEFT" text="Причина"
+                                                                       GridPane.rowIndex="1">
+                                                                    <opaqueInsets>
+                                                                        <Insets/>
+                                                                    </opaqueInsets>
+                                                                    <padding>
+                                                                        <Insets left="10.0"/>
+                                                                    </padding>
+                                                                </Label>
+                                                                <Label alignment="TOP_LEFT" text="Собеседование"
+                                                                       GridPane.rowIndex="2">
+                                                                    <opaqueInsets>
+                                                                        <Insets/>
+                                                                    </opaqueInsets>
+                                                                    <padding>
+                                                                        <Insets left="10.0"/>
+                                                                    </padding>
+                                                                </Label>
+                                                                <VBox alignment="CENTER_LEFT" prefHeight="28.0"
+                                                                      prefWidth="177.0" GridPane.rowIndex="3">
+                                                                    <children>
+                                                                        <Label alignment="TOP_LEFT"
+                                                                               text="Отказ от собеседования"
+                                                                               GridPane.rowIndex="3">
+                                                                            <opaqueInsets>
+                                                                                <Insets/>
+                                                                            </opaqueInsets>
+                                                                            <padding>
+                                                                                <Insets left="10.0"/>
+                                                                            </padding>
+                                                                        </Label>
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox alignment="CENTER_LEFT" GridPane.columnIndex="1"
+                                                                      GridPane.rowIndex="3">
+                                                                    <children>
+                                                                        <ChoiceBox fx:id="choiceBoxRejectFromInterview"
+                                                                                   onMousePressed="#disableInterview"
+                                                                                   prefHeight="25.0" prefWidth="463.0"
+                                                                                   GridPane.columnIndex="1"
+                                                                                   GridPane.rowIndex="3"/>
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox prefHeight="200.0" prefWidth="100.0"
+                                                                      GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                    <children>
+                                                                        <Label text="Дата"/>
+                                                                        <DatePicker fx:id="datePickerForInterview"
+                                                                                    onMousePressed="#disableRejectInterview"/>
+                                                                        <Label text="Время"/>
+                                                                        <TextField fx:id="textFieldTimeForInterview"
+                                                                                   onKeyPressed="#disableRejectInterview"
+                                                                                   onMousePressed="#disableRejectInterview"
+                                                                                   prefHeight="25.0" prefWidth="152.0"
+                                                                                   promptText="чч:мм или чч.мм"/>
+                                                                    </children>
+                                                                </VBox>
+                                                                <TabPane prefHeight="200.0" prefWidth="200.0"
+                                                                         tabClosingPolicy="UNAVAILABLE"
+                                                                         GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                    <tabs>
+                                                                        <Tab fx:id="tabPaneNow" text="Сегодня">
+                                                                            <content>
+                                                                                <ChoiceBox fx:id="choiceBoxAnswerCall"
+                                                                                           prefHeight="25.0"
+                                                                                           prefWidth="455.0"/>
+                                                                            </content>
+                                                                        </Tab>
+                                                                        <Tab fx:id="tabPane1">
+                                                                            <content>
+                                                                                <TextField fx:id="textFieldPane1"/>
+                                                                            </content>
+                                                                        </Tab>
+                                                                        <Tab fx:id="tabPane2">
+                                                                            <content>
+                                                                                <TextField fx:id="textFieldPane2"/>
+                                                                            </content>
+                                                                        </Tab>
+                                                                        <Tab fx:id="tabPane3">
+                                                                            <content>
+                                                                                <TextField fx:id="textFieldPane3"/>
+                                                                            </content>
+                                                                        </Tab>
+                                                                        <Tab fx:id="tabPane4">
+                                                                            <content>
+                                                                                <TextField fx:id="textFieldPane4"/>
+                                                                            </content>
+                                                                        </Tab>
+                                                                        <Tab fx:id="tabPane5">
+                                                                            <content>
+                                                                                <TextField fx:id="textFieldPane5"/>
+                                                                            </content>
+                                                                        </Tab>
+                                                                        <Tab fx:id="tabPane6">
+                                                                            <content>
+                                                                                <TextField fx:id="textFieldPane6"
+                                                                                           prefHeight="25.0"
+                                                                                           prefWidth="418.0"/>
+                                                                            </content>
+                                                                        </Tab>
+                                                                    </tabs>
+                                                                </TabPane>
+                                                            </children>
+                                                        </GridPane>
+                                                    </content>
+                                                </TitledPane>
+                                                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1"
+                                                      GridPane.rowIndex="2">
+                                                    <children>
+                                                        <TextArea fx:id="textAreaMessage" prefHeight="97.0"
+                                                                  prefWidth="625.0"/>
+                                                        <HBox prefHeight="39.0" prefWidth="625.0">
+                                                            <children>
+                                                                <Button fx:id="buttonRecord" mnemonicParsing="false"
+                                                                        onAction="#onWriteToFile" prefHeight="25.0"
+                                                                        prefWidth="121.0" text="Запись"/>
+                                                                <Button fx:id="buttonEditFound" contentDisplay="TOP"
+                                                                        lineSpacing="2.0" mnemonicParsing="false"
+                                                                        prefHeight="24.0" prefWidth="231.0"
+                                                                        text="Редактировать найденного кандидата"/>
+                                                                <Button fx:id="buttonCreateCandidate"
+                                                                        mnemonicParsing="false"
+                                                                        onAction="#onCreateCandidate" prefHeight="25.0"
+                                                                        prefWidth="166.0" text="Создание кандидата"/>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox prefHeight="64.0" prefWidth="625.0">
+                                                            <children>
+                                                                <TextField fx:id="textFieldSearch"/>
+                                                                <Button fx:id="buttonSearch" mnemonicParsing="false"
+                                                                        text="Поиск"/>
+                                                                <Button fx:id="buttonTest" mnemonicParsing="false"
+                                                                        onAction="#clearAll" text="test"/>
+                                                                <Button fx:id="buttonTest1" mnemonicParsing="false"
+                                                                        onAction="#loadedTestCandidate"
+                                                                        text="Load candidate"/>
+                                                                <Button fx:id="buttonReport" mnemonicParsing="false"
+                                                                        onAction="#onCreateReport" text="отчет"/>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                                <TitledPane prefHeight="292.0" prefWidth="625.0" text="Собеседование"
+                                                            GridPane.columnIndex="1">
+                                                    <content>
+                                                        <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            <children>
+                                                                <HBox prefHeight="39.0" prefWidth="603.0">
+                                                                    <children>
+                                                                        <Label prefHeight="33.0" prefWidth="85.0"
+                                                                               text="Оценка HR"/>
+                                                                        <ChoiceBox fx:id="choiceBoxEstimateOfHr"
+                                                                                   prefWidth="150.0"/>
+                                                                    </children>
+                                                                </HBox>
+                                                                <Label prefHeight="17.0" prefWidth="182.0"
+                                                                       text="Коментарий HR:"/>
+                                                                <TextArea fx:id="textAreaCommentOfHr" prefHeight="81.0"
+                                                                          prefWidth="603.0"/>
+                                                                <HBox alignment="CENTER_LEFT" prefHeight="46.0"
+                                                                      prefWidth="603.0">
+                                                                    <children>
+                                                                        <Label prefHeight="17.0" prefWidth="96.0"
+                                                                               text="Результат Теста:"/>
+                                                                        <TextArea fx:id="textAreaCommentOfTest"
+                                                                                  prefHeight="46.0" prefWidth="507.0"/>
+                                                                    </children>
+                                                                </HBox>
+                                                                <HBox alignment="CENTER_LEFT" prefHeight="54.0"
+                                                                      prefWidth="603.0">
+                                                                    <children>
+                                                                        <Label prefHeight="17.0" prefWidth="95.0"
+                                                                               text="Итог:"/>
+                                                                        <ChoiceBox fx:id="choiceBoxGeneralResult"
+                                                                                   onMousePressed="#onResultInterview"
+                                                                                   prefHeight="25.0" prefWidth="176.0"/>
+                                                                    </children>
+                                                                </HBox>
+                                                            </children>
+                                                        </VBox>
+                                                    </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" prefHeight="344.0" prefWidth="625.0"
+                                                            text="Адаптация" GridPane.columnIndex="1"
+                                                            GridPane.rowIndex="1">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                                    prefWidth="200.0">
+                                                            <children>
+                                                                <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="244.0"
+                                                                      prefWidth="624.0">
+                                                                    <children>
+                                                                        <HBox prefHeight="33.0" prefWidth="624.0">
+                                                                            <children>
+                                                                                <Label prefHeight="17.0"
+                                                                                       prefWidth="70.0"
+                                                                                       text="Обучение:"/>
+                                                                                <ChoiceBox
+                                                                                        fx:id="choiceBoxResultOfTraining"
+                                                                                        onMousePressed="#onChoiceBoxTrainingOk"
+                                                                                        prefHeight="25.0"
+                                                                                        prefWidth="148.0"/>
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <HBox prefHeight="66.0" prefWidth="624.0">
+                                                                            <children>
+                                                                                <VBox prefHeight="158.0"
+                                                                                      prefWidth="207.0">
+                                                                                    <children>
+                                                                                        <RadioButton
+                                                                                                fx:id="radioButton1"
+                                                                                                mnemonicParsing="false"
+                                                                                                onMousePressed="#onRadioButtonTrainingFall"
+                                                                                                text="Не пришёл совсем"/>
+                                                                                        <RadioButton
+                                                                                                fx:id="radioButton2"
+                                                                                                mnemonicParsing="false"
+                                                                                                onMousePressed="#onRadioButtonTrainingFall"
+                                                                                                text="RadioButton"/>
+                                                                                        <RadioButton
+                                                                                                fx:id="radioButton3"
+                                                                                                mnemonicParsing="false"
+                                                                                                onMousePressed="#onRadioButtonTrainingFall"
+                                                                                                text="RadioButton"/>
+                                                                                    </children>
+                                                                                </VBox>
+                                                                                <VBox prefHeight="130.0"
+                                                                                      prefWidth="225.0">
+                                                                                    <children>
+                                                                                        <RadioButton
+                                                                                                fx:id="radioButton4"
+                                                                                                mnemonicParsing="false"
+                                                                                                onMousePressed="#onRadioButtonTrainingFall"
+                                                                                                text="Не сдал атестацию"/>
+                                                                                        <RadioButton
+                                                                                                fx:id="radioButton5"
+                                                                                                mnemonicParsing="false"
+                                                                                                onMousePressed="#onRadioButtonTrainingFall"
+                                                                                                text="Не пришел на трудоустройство"/>
+                                                                                    </children>
+                                                                                </VBox>
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <Label prefHeight="17.0" prefWidth="321.0"
+                                                                               text="Оценка Наставника/Менеджера по персоналу"/>
+                                                                        <TextArea fx:id="textAreaEstimateOFCoach"
+                                                                                  prefHeight="47.0" prefWidth="624.0"/>
+                                                                        <Label prefHeight="17.0" prefWidth="191.0"
+                                                                               text="Адаптация по итогам 1 месяца:"/>
+                                                                        <TextArea fx:id="textAreaResultOfAdaptation"
+                                                                                  prefHeight="65.0" prefWidth="624.0"/>
+                                                                    </children>
+                                                                </VBox>
+                                                                <Label fx:id="labelPosition" layoutX="8.0"
+                                                                       layoutY="253.0" text="Label"/>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </TitledPane>
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Список Кандидатов">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="tableViewCandidate" prefHeight="802.0" prefWidth="1800.0">
+                                            <columns>
+                                                <TableColumn fx:id="tbcPositionOfArray" prefWidth="75.0" text="N%"/>
+                                                <TableColumn fx:id="tbcFIO" prefWidth="116.0"
+                                                             text="Фамилия Имя Отчество"/>
+                                                <TableColumn fx:id="tbcPhone" prefWidth="34.0" text="Телефон"/>
+                                                <TableColumn fx:id="tbcSource" prefWidth="75.0" text="Источник"/>
+                                                <TableColumn fx:id="tbcInitiative" prefWidth="75.0" text="Инициатива"/>
+                                                <TableColumn fx:id="tbcProject" prefWidth="75.0" text="Проект"/>
+                                                <TableColumn fx:id="tbcResultOFCallLast" prefWidth="75.0"
+                                                             text="Результат звонка"/>
+                                                <TableColumn fx:id="tbcInterview" prefWidth="75.0"
+                                                             text="Собеседование"/>
+                                                <TableColumn fx:id="tbcRejectOfInterview" prefWidth="88.0"
+                                                             text="Отказ от Собесед"/>
+                                                <TableColumn fx:id="tbcEstimateOfHr" prefWidth="87.0" text="Оценка HR"/>
+                                                <TableColumn fx:id="tbcResultOfInterview" prefWidth="88.0"
+                                                             text="Итог Собеседования"/>
+                                                <TableColumn fx:id="tbcTraining" prefWidth="82.0" text="Обучение"/>
+                                                <TableColumn fx:id="tbcTrainingFall" prefWidth="84.0"
+                                                             text="Причина провала"/>
+                                                <TableColumn fx:id="tbcEstimateOfCoach" prefWidth="100.0"
+                                                             text="Оценка Наставника"/>
+                                                <TableColumn fx:id="tbcAdaptation" prefWidth="114.0" text="Адаптация "/>
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Звонки">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                            </content>
+                        </Tab>
+                        <Tab text="Собеседование">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                            </content>
+                        </Tab>
+                        <Tab text="Обучение">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabPaneReport" text="Отчет">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="783.0" prefWidth="1312.0">
+                                    <children>
+                                        <TableView fx:id="tableViewReport" layoutX="20.0" layoutY="8.0"
+                                                   prefHeight="702.0" prefWidth="1765.0"/>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
