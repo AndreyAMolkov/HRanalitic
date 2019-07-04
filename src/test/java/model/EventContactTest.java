@@ -10,30 +10,30 @@ import static org.junit.Assert.assertNotNull;
 public class EventContactTest {
 
     @Test
-    public void setComment() throws WrongInputExeption {
+    public void setComment() throws WrongInputException {
         EventContact testClass = new EventContact("check");
         assertEquals("check", testClass.getComment());
     }
 
-    @Test(expected = WrongInputExeption.class)
-    public void EventContactInterviewWrong() throws WrongInputExeption {
+    @Test(expected = WrongInputException.class)
+    public void EventContactInterviewWrong() throws WrongInputException {
         EventContact testClass = new EventContact("check", "12.12.2015", "12.12");
     }
 
     @Test
-    public void EventContactInterview() throws WrongInputExeption {
+    public void EventContactInterview() throws WrongInputException {
         EventContact testClass = new EventContact(AnswerOfCallConversation.INTERVIEW.getName(), "12.12.2015", "12.12");
         assertEquals(AnswerOfCallConversation.INTERVIEW.getName(), testClass.getComment());
         assertNotNull(testClass.getDateTimeInterviewString());
     }
 
-    @Test(expected = WrongInputExeption.class)
-    public void EventContactWrong() throws WrongInputExeption {
+    @Test(expected = WrongInputException.class)
+    public void EventContactWrong() throws WrongInputException {
         EventContact testClass = new EventContact(AnswerOfCallConversation.INTERVIEW.getName());
     }
 
     @Test
-    public void setLocalDateTimeForComment() throws WrongInputExeption {
+    public void setLocalDateTimeForComment() throws WrongInputException {
         EventContact testClass = new EventContact("check");
         LocalDateTime expected = testClass.getDateTime().minusDays(1);
         testClass.setDateOfComment(expected.toString());

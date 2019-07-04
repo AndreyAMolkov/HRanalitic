@@ -70,7 +70,7 @@ public class DataUtils {
         return result;
     }
 
-    public static List <Candidate> convertStringJsonToCandidate(List <String> listCandidates) throws WrongInputExeption, NotFoundExeption, IOException {
+    public static List<Candidate> convertStringJsonToCandidate(List<String> listCandidates) throws WrongInputException, NotFoundExeption, IOException {
         List <Candidate> result = null;
         if (listCandidates != null) {
             List <Candidate> list = new ArrayList <>();
@@ -84,7 +84,7 @@ public class DataUtils {
         return result;
     }
 
-    public static Candidate convertStringJsonToCandidate(String candidateLine) throws IOException, WrongInputExeption, NotFoundExeption {
+    public static Candidate convertStringJsonToCandidate(String candidateLine) throws IOException, WrongInputException, NotFoundExeption {
         Candidate result;
         if (StringUtils.isEmpty(candidateLine)) {
             return null;
@@ -128,7 +128,7 @@ public class DataUtils {
         return Constants.OBJECT_MAPPER.readValue(candidateLine, Candidate.class);
     }
 
-    public static BasicInformation convertStringToBasicInformation(Object basicJson) throws IOException, WrongInputExeption {
+    public static BasicInformation convertStringToBasicInformation(Object basicJson) throws IOException, WrongInputException {
         BasicInformation result;
         if (basicJson == null) {
             return null;
@@ -161,23 +161,23 @@ public class DataUtils {
         return result;
     }
 
-    public static String phoneClear(String phone) throws WrongInputExeption {
+    public static String phoneClear(String phone) throws WrongInputException {
         String result = null;
         if (StringUtils.isEmpty(phone)) {
-            throw new WrongInputExeption(Constants.WRONG_FORMAT_PHONE + Constants.LENGTH_OF_CELL_PHONE + Constants.FOR + result);
+            throw new WrongInputException(Constants.WRONG_FORMAT_PHONE + Constants.LENGTH_OF_CELL_PHONE + Constants.FOR + result);
         }
         result = phone.replaceAll("\\D+", "");
         if (StringUtils.isEmpty(result) || !(result.length() == Constants.LENGTH_OF_CELL_PHONE)) {
-            throw new WrongInputExeption(Constants.WRONG_FORMAT_PHONE + Constants.LENGTH_OF_CELL_PHONE + Constants.FOR + result);
+            throw new WrongInputException(Constants.WRONG_FORMAT_PHONE + Constants.LENGTH_OF_CELL_PHONE + Constants.FOR + result);
         }
         return result;
     }
 
-    public static LocalDateTime stringToLocalDate(String date) throws WrongInputExeption, DateTimeParseException {
+    public static LocalDateTime stringToLocalDate(String date) throws WrongInputException, DateTimeParseException {
         LocalDateTime localDate = null;
         LocalDate localDateBuf;
         if (StringUtils.isEmpty(date)) {
-            throw new WrongInputExeption(Constants.WRONG_FORMAT_DATE + Constants.FORMAT_DATE + Constants.FOR + date);
+            throw new WrongInputException(Constants.WRONG_FORMAT_DATE + Constants.FORMAT_DATE + Constants.FOR + date);
         }
 
         String result = convertYYmmDDtoDDmmYY(date).replace(",", ".").replace("-", ".");
@@ -194,15 +194,15 @@ public class DataUtils {
             LocalTime localTime = DataUtils.stringToLocalTime(date.split(" ")[1]);
             localDate = LocalDateTime.of(localDateBuf.getYear(), localDateBuf.getMonth(), localDateBuf.getDayOfMonth(), localTime.getHour(), localTime.getMinute());
         } else {
-            throw new WrongInputExeption(Constants.WRONG_FORMAT_DATE + Constants.FORMAT_DATE + Constants.FOR + date);
+            throw new WrongInputException(Constants.WRONG_FORMAT_DATE + Constants.FORMAT_DATE + Constants.FOR + date);
         }
         return localDate;
     }
 
 
-    public static LocalTime stringToLocalTime(String time) throws WrongInputExeption {
+    public static LocalTime stringToLocalTime(String time) throws WrongInputException {
         if (StringUtils.isEmpty(time)) {
-            throw new WrongInputExeption(Constants.WRONG_FORMAT_TIME + Constants.FORMAT_TIME + Constants.FOR + time);
+            throw new WrongInputException(Constants.WRONG_FORMAT_TIME + Constants.FORMAT_TIME + Constants.FOR + time);
         }
         String result = time.replace(".", ":").replace(",", ":").replace("-", ":");
         String regex = "([01]?[0-9]|2[0-3]):[0-5][0-9]";
@@ -212,17 +212,17 @@ public class DataUtils {
             if (Pattern.matches(regex2, result)) {
                 return LocalTime.parse(result, DateTimeFormatter.ofPattern("HH:mm:ss"));
             } else {
-                throw new WrongInputExeption(Constants.WRONG_FORMAT_TIME + Constants.FORMAT_TIME + Constants.FOR + time);
+                throw new WrongInputException(Constants.WRONG_FORMAT_TIME + Constants.FORMAT_TIME + Constants.FOR + time);
             }
         }
         return LocalTime.parse(result, DateTimeFormatter.ofPattern("HH:mm"));
     }
 
-    public static Map <String, String> getFIOfromString(String fio) throws WrongInputExeption {
+    public static Map<String, String> getFIOfromString(String fio) throws WrongInputException {
         String linePatronymic;
         String line = Constants.CLEAR_PATTERN.matcher(fio).replaceAll(" ").trim();
         if (!line.contains(" ")) {
-            throw new WrongInputExeption(Constants.WRONG_FORMAT + Constants.WRONG_FORMAT + "Фамилия Имя Отчество");
+            throw new WrongInputException(Constants.WRONG_FORMAT + Constants.WRONG_FORMAT + "Фамилия Имя Отчество");
         }
         Map <String, String> result = new HashMap <>();
         result.put(Constants.SURNAME, line.substring(0, line.indexOf(" ")));
@@ -305,7 +305,7 @@ public class DataUtils {
         return formatter.format(localDateTime);
     }
 
-    public static List <CollectData> candidateToCollectData(List <Candidate> listOfCandidate) throws WrongInputExeption {
+    public static List<CollectData> candidateToCollectData(List<Candidate> listOfCandidate) throws WrongInputException {
         if (listOfCandidate == null) {
             return null;
         }
@@ -318,10 +318,10 @@ public class DataUtils {
         return result;
     }
 
-    public static EventContact createEvent(Object comment, String localDate, String localTime) throws WrongInputExeption {
+    public static EventContact createEvent(Object comment, String localDate, String localTime) throws WrongInputException {
         EventContact result;
         if (comment != null && StringUtils.isEmpty(comment.toString())) {
-            throw new WrongInputExeption("Error: ввод пустого значения для причины или даты");
+            throw new WrongInputException("Error: ввод пустого значения для причины или даты");
         }
 
         if (!StringUtils.isEmpty(localTime) && !StringUtils.isEmpty(localDate)) {

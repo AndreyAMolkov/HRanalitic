@@ -23,12 +23,12 @@ public enum Project implements EnumInterface {
     }
 
     @Override
-    public String findName(String line) throws WrongInputExeption {
+    public String findName(String line) throws WrongInputException {
         String result = null;
         for (Project one : values()) {
             if (one.getName().contains(line.trim())) {
                 if (result != null) {
-                    throw new WrongInputExeption(Constants.WRONG_FORMAT_ENUM + " нашел - " + result + ", " + one.getName());
+                    throw new WrongInputException(Constants.WRONG_FORMAT_ENUM + " нашел - " + result + ", " + one.getName());
                 }
                 result = one.getName();
             }

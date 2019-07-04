@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="HrResecher" />
+        <module name="HrAnalitic" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8" />

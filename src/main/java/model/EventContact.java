@@ -29,18 +29,18 @@ public class EventContact implements Serializable {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime dateTimeInterview;
 
-    public EventContact(String comment, String localDateForInterview, String localTimeForInterview) throws WrongInputExeption {
+    public EventContact(String comment, String localDateForInterview, String localTimeForInterview) throws WrongInputException {
         if (StringUtils.isEmpty(comment) || !(AnswerOfCallConversation.INTERVIEW.getNameLowerCase()).contains(comment.toLowerCase())) {
-            throw new WrongInputExeption(Constants.WRONG_FORMAT + Constants.FOR + " регистрации времени интерьвью");
+            throw new WrongInputException(Constants.WRONG_FORMAT + Constants.FOR + " регистрации времени интерьвью");
         }
         this.comment = comment;
         setDateTime();
         setDateTimeInterview(localDateForInterview, localTimeForInterview);
     }
 
-    public EventContact(String comment) throws WrongInputExeption {
+    public EventContact(String comment) throws WrongInputException {
         if (StringUtils.isEmpty(comment) || (AnswerOfCallConversation.INTERVIEW.getNameLowerCase()).contains(comment.toLowerCase())) {
-            throw new WrongInputExeption(Constants.WRONG_FORMAT + Constants.FOR + " регистрации события");
+            throw new WrongInputException(Constants.WRONG_FORMAT + Constants.FOR + " регистрации события");
         }
         this.comment = comment;
         setDateTime();
@@ -83,7 +83,7 @@ public class EventContact implements Serializable {
         return dateOfComment;
     }
 
-    private void setDateTimeInterview(String localDateForInterview, String localTimeForInterview) throws WrongInputExeption {
+    private void setDateTimeInterview(String localDateForInterview, String localTimeForInterview) throws WrongInputException {
         LocalDateTime localDateTime = DataUtils.stringToLocalDate(localDateForInterview);
         LocalDate localDate = LocalDate.of(localDateTime.getYear(), localDateTime.getMonth(), localDateTime.getDayOfMonth());
         LocalTime localTime = DataUtils.stringToLocalTime(localTimeForInterview);

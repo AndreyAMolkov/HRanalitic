@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 public class DataUtilsTest {
 
     @Test
-    public void recordToFile() throws WrongInputExeption, NotFoundExeption, JsonProcessingException {
+    public void recordToFile() throws WrongInputException, NotFoundExeption, JsonProcessingException {
         Candidate testClass;
         Map <String, EventContact> mapEvent = new HashMap <>();
         mapEvent.put(ResultOfCall.NO_ANSWER.getName(), new EventContact(ResultOfCall.NO_ANSWER.getName()));
@@ -32,7 +32,7 @@ public class DataUtilsTest {
     }
 
     @Test
-    public void convertLocalDateTime() throws WrongInputExeption {
+    public void convertLocalDateTime() throws WrongInputException {
         String date = "21.06.2019 19:23:00";
         LocalDateTime localDateTime = DataUtils.stringToLocalDate(date);
 
@@ -49,36 +49,36 @@ public class DataUtilsTest {
     }
 
     @Test
-    public void stringToDate() throws WrongInputExeption {
+    public void stringToDate() throws WrongInputException {
 
         assertEquals(LocalDate.parse("01.11.2010", DateTimeFormatter.ofPattern("d.MM.yyyy")), DataUtils.stringToLocalDate("1,11,2010"));
     }
 
-    @Test(expected = WrongInputExeption.class)
-    public void stringToDateWrong() throws WrongInputExeption {
+    @Test(expected = WrongInputException.class)
+    public void stringToDateWrong() throws WrongInputException {
 
         DataUtils.stringToLocalDate("11,111,2010");
     }
 
     @Test
-    public void phoneClear() throws WrongInputExeption {
+    public void phoneClear() throws WrongInputException {
         assertEquals("89101652525", DataUtils.phoneClear("8b910.165g2525"));
     }
 
-    @Test(expected = WrongInputExeption.class)
-    public void phoneClearWrongLength() throws WrongInputExeption {
+    @Test(expected = WrongInputException.class)
+    public void phoneClearWrongLength() throws WrongInputException {
         DataUtils.phoneClear("8910165525");
     }
 
     @Test
-    public void convertStringJsonToCandidate() throws IOException, NotFoundExeption, WrongInputExeption {
+    public void convertStringJsonToCandidate() throws IOException, NotFoundExeption, WrongInputException {
         List <Candidate> result;
         result = DataUtils.convertStringJsonToCandidate(DataUtils.readFromFile(null));
         assertNotNull(result);
     }
 
     @Test
-    public void convertStringJsonToCandidateString() throws IOException, WrongInputExeption, NotFoundExeption {
+    public void convertStringJsonToCandidateString() throws IOException, WrongInputException, NotFoundExeption {
         Candidate result;
         String line = "{\"BasicInformation\":{\"name\":\"Andrey\",\"patronymic\":\"Алексеевич\",\"surname\":\"Бобков\",\"phonesList\":[\"89081628925\"],\"birthday\":\"16.12-2010\"},\"eventMap\":{\"OUR_INITIATIVE\":{\"comment\":\"не берет трубку\",\"dateOfComment\":\"2019-05-03T12:20:11.199\"}},\"temperature\":\"мы нашли\",\"source\":\"hh.ru\",\"project\":\"Хартия\"}";
         result = DataUtils.convertStringJsonToCandidate(line);
@@ -86,7 +86,7 @@ public class DataUtilsTest {
     }
 
     @Test
-    public void convertJsonToBasicInformation() throws WrongInputExeption, IOException {
+    public void convertJsonToBasicInformation() throws WrongInputException, IOException {
         BasicInformation result;
         String line = "{\"name\":\"Andrey\",\"patronymic\":\"Алексеевич\",\"surname\":\"Бобков\",\"phonesList\":[\"89081628925\"],\"birthday\":\"16.12.2010\"}";
         result = DataUtils.convertStringToBasicInformation(line);
@@ -100,17 +100,17 @@ public class DataUtilsTest {
     }
 
     @Test
-    public void stringToLocalTime() throws WrongInputExeption {
+    public void stringToLocalTime() throws WrongInputException {
         assertEquals(LocalTime.parse("12:12"), DataUtils.stringToLocalTime("12.12"));
     }
 
-    @Test(expected = WrongInputExeption.class)
-    public void stringToLocalTimeWrong() throws WrongInputExeption {
+    @Test(expected = WrongInputException.class)
+    public void stringToLocalTimeWrong() throws WrongInputException {
         DataUtils.stringToLocalTime("12.60");
     }
 
     @Test
-    public void getFIOfromString() throws WrongInputExeption {
+    public void getFIOfromString() throws WrongInputException {
         String line = " Мушкин    Казимир   Владимирович  ";
         Map <String, String> map;
         map = DataUtils.getFIOfromString(line);
@@ -121,14 +121,14 @@ public class DataUtilsTest {
         assertEquals("Владимирович", map.get(Constants.PATRONYMIC));
     }
 
-    @Test(expected = WrongInputExeption.class)
+    @Test(expected = WrongInputException.class)
     public void getFIOfromStringWrong() {
         String line = "Мушкин    ";
         Map <String, String> map;
     }
 
     @Test
-    public void getFIOfromString2() throws WrongInputExeption {
+    public void getFIOfromString2() throws WrongInputException {
         String line = " Мушкин    Казимир  ";
         Map <String, String> map;
         map = DataUtils.getFIOfromString(line);

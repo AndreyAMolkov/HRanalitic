@@ -7,7 +7,6 @@ import service.DataUtils;
 import validators.AssertBoolean;
 
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 import java.util.Map;
 
 @JsonIgnoreProperties(value = {"position", "fio"})
@@ -22,7 +21,7 @@ public class Candidate {
     private String project;
     private EventContact result;
 
-    public Candidate(model.BasicInformation basicInformation, Map <String, EventContact> eventMap, String source, String initiative, String project, EventContact result, boolean callTo) throws WrongInputExeption, NotFoundExeption {
+    public Candidate(model.BasicInformation basicInformation, Map<String, EventContact> eventMap, String source, String initiative, String project, EventContact result, boolean callTo) throws WrongInputException, NotFoundExeption {
         BasicInformation = basicInformation;
         this.eventMap = eventMap;
         setSource(source);
@@ -79,14 +78,14 @@ public class Candidate {
         this.source = source;
     }
 
-    public void setSource(String source) throws WrongInputExeption, NotFoundExeption {
+    public void setSource(String source) throws WrongInputException, NotFoundExeption {
         String result = null;
         String name;
         for (Source one : Source.values()) {
             name = one.getName();
             if (!StringUtils.isEmpty(source) && name.toLowerCase().contains(source.trim().toLowerCase())) {
                 if (result != null) {
-                    throw new WrongInputExeption(Constants.WRONG_FORMAT_ENUM + " нашел - " + result + ", " + one.getName() + Constants.FOR + DataUtils.arrayToString(Source.values()));
+                    throw new WrongInputException(Constants.WRONG_FORMAT_ENUM + " нашел - " + result + ", " + one.getName() + Constants.FOR + DataUtils.arrayToString(Source.values()));
                 }
                 result = one.toString();
             }
@@ -105,14 +104,15 @@ public class Candidate {
     public void setProjectDonTUseOnlyForMapper(String project) {
         this.project = project;
     }
-    public void setProject(String project) throws WrongInputExeption, NotFoundExeption {
+
+    public void setProject(String project) throws WrongInputException, NotFoundExeption {
         String result = null;
         String name;
         for (Project one : Project.values()) {
             name = one.getName();
             if (!StringUtils.isEmpty(project) && name.toLowerCase().contains(project.trim().toLowerCase())) {
                 if (result != null) {
-                    throw new WrongInputExeption(Constants.WRONG_FORMAT_ENUM + " нашел - " + result + ", " + one.getName() + Constants.FOR + DataUtils.arrayToString(Project.values()));
+                    throw new WrongInputException(Constants.WRONG_FORMAT_ENUM + " нашел - " + result + ", " + one.getName() + Constants.FOR + DataUtils.arrayToString(Project.values()));
                 }
                 result = one.toString();
             }
@@ -140,14 +140,14 @@ public class Candidate {
         this.initiative = initiativeAlias;
     }
 
-    public void setInitiativeRussian(String initiativeRussian) throws WrongInputExeption, NotFoundExeption {
+    public void setInitiativeRussian(String initiativeRussian) throws WrongInputException, NotFoundExeption {
         String result = null;
         String name;
         for (Initiative one : Initiative.values()) {
             name = one.getName();
             if (!StringUtils.isEmpty(initiativeRussian) && name.toLowerCase().contains(initiativeRussian.trim().toLowerCase())) {
                 if (result != null) {
-                    throw new WrongInputExeption(Constants.WRONG_FORMAT_ENUM + " не однозначный результат, нашел - " + result + ", " + one.getName() + " " + Constants.FOR + DataUtils.arrayToString(Initiative.values()));
+                    throw new WrongInputException(Constants.WRONG_FORMAT_ENUM + " не однозначный результат, нашел - " + result + ", " + one.getName() + " " + Constants.FOR + DataUtils.arrayToString(Initiative.values()));
                 }
                 result = one.toString();
             }

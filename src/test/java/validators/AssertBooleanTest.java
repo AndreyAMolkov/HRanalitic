@@ -2,26 +2,19 @@ package validators;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import model.*;
-import org.junit.Assert;
 import org.junit.Test;
 import service.DataUtils;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 public class AssertBooleanTest {
 
     @Test
-    public void checkBooleanTest() throws JsonProcessingException, WrongInputExeption {
+    public void checkBooleanTest() throws JsonProcessingException, WrongInputException {
 
 
     Candidate testClass;
@@ -42,7 +35,7 @@ public class AssertBooleanTest {
 
 }
 @Test//(expected = AssertionError.class)
-    public void checkBooleanTestException() throws WrongInputExeption, JsonProcessingException {
+public void checkBooleanTestException() throws WrongInputException, JsonProcessingException {
         Candidate testClass;
         Map <String, EventContact> mapEvent = new HashMap <>();
         mapEvent.put(ResultOfCall.NO_ANSWER.getName(),new EventContact(ResultOfCall.NO_ANSWER.getName()));
@@ -62,7 +55,7 @@ public class AssertBooleanTest {
 
     }
     @Test//(expected = NullPointerException.class)
-    public void checkBooleanTestExceptionNull() throws WrongInputExeption {
+    public void checkBooleanTestExceptionNull() throws WrongInputException {
 
 
         Candidate testClass;

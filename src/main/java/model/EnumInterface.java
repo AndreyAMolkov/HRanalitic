@@ -9,6 +9,6 @@ public interface EnumInterface {
 
     Enum[] getValues();
 
-    String findName(String line) throws WrongInputExeption;
+    String findName(String line) throws WrongInputException;
     //public List<String> getListName();
 }

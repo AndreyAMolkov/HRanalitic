@@ -69,7 +69,7 @@ public class CollectData {
     public CollectData() {
     }
 
-    public CollectData(Candidate candidate, Integer count) throws WrongInputExeption {
+    public CollectData(Candidate candidate, Integer count) throws WrongInputException {
         this.candidate = candidate;
         BasicInformation basicInformation = candidate.getBasicInformation();
         this.position = count;
@@ -93,7 +93,7 @@ public class CollectData {
         this.resultOfAdaptation = setOnePositionOfEvent(Constants.RESULT_OF_ADAPTATION);
     }
 
-    private String setOnePositionOfEvent(String key) throws WrongInputExeption {
+    private String setOnePositionOfEvent(String key) throws WrongInputException {
         Map <String, EventContact> eventMap = candidate.getEventMap();
         EventContact eventContact = getEventContact(eventMap, key);
         if (eventContact != null) {
@@ -330,10 +330,10 @@ public class CollectData {
         this.commentOfCall0 = commentOfCall0;
     }
 
-    public LocalDateTime getDateOfCommentOfCall0() throws WrongInputExeption {
+    public LocalDateTime getDateOfCommentOfCall0() throws WrongInputException {
         try {
             return DataUtils.stringToLocalDate(dateOfCommentOfCall0);
-        } catch (WrongInputExeption e) {
+        } catch (WrongInputException e) {
             return null;
         }
 

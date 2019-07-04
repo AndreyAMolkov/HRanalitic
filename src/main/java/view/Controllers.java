@@ -285,7 +285,7 @@ public class Controllers extends Application {
 
     }
 
-    public Map <String, EventContact> collectMapEvent() throws WrongInputExeption {
+    public Map<String, EventContact> collectMapEvent() throws WrongInputException {
         Map <String, EventContact> result = new HashMap <>();
 
         if (choiceBoxAnswerCall.getValue() != null) {
@@ -312,14 +312,14 @@ public class Controllers extends Application {
             } else if (reject != null && !StringUtils.isEmpty(reject.toString())) {
                 result.put(Constants.INTERVIEW, DataUtils.createEvent(reject, null, null));
             } else
-                throw new WrongInputExeption("Error: ввод пустого значения для собеседования");
+                throw new WrongInputException("Error: ввод пустого значения для собеседования");
         } else if (radioButtonCallNo.isSelected()) {
             if (choiceBoxAnswerCall.getSelectionModel().getSelectedItem() != null) {
                 result.put(Constants.INTERVIEW, DataUtils.createEvent(choiceBoxAnswerCall.getSelectionModel().getSelectedItem(), dateInterview, timeInterview));
             } else
-                throw new WrongInputExeption("Error: выберите причину");
+                throw new WrongInputException("Error: выберите причину");
         } else {
-            throw new WrongInputExeption("Error: Не выбран результат дозвона - да или нет");
+            throw new WrongInputException("Error: Не выбран результат дозвона - да или нет");
         }
 
         //3
@@ -359,7 +359,7 @@ public class Controllers extends Application {
     }
 
 
-    public void createCallAnswerNo(String nameNUmberTab, String date, String message, Map <String, EventContact> map) throws WrongInputExeption {
+    public void createCallAnswerNo(String nameNUmberTab, String date, String message, Map<String, EventContact> map) throws WrongInputException {
         if (!StringUtils.isEmpty(date) && !StringUtils.isEmpty(message)) {
             EventContact eventContact = DataUtils.createEvent(message, null, null);
             eventContact.setDateOfComment(date);
@@ -511,7 +511,7 @@ public class Controllers extends Application {
         choiceBoxInitiative.getSelectionModel().selectFirst();
     }
 
-    public void loadedCandidate(Candidate candidate, CollectData collectData) throws WrongInputExeption {
+    public void loadedCandidate(Candidate candidate, CollectData collectData) throws WrongInputException {
         labelPosition.setText(String.valueOf(collectData.getPosition()));
         textAreaFIO.setText(candidate.getFIO());
         textAreaBirthday.setText(candidate.getBasicInformation().getBirthdayString());
@@ -585,8 +585,8 @@ public class Controllers extends Application {
                 }
                 positionSearch++;
             }
-        } catch (WrongInputExeption wrongInputExeption) {
-            createMassage(wrongInputExeption.getMessage() + ": " + line + ": " + choiceBox);
+        } catch (WrongInputException wrongInputException) {
+            createMassage(wrongInputException.getMessage() + ": " + line + ": " + choiceBox);
         }
     }
 
@@ -623,14 +623,14 @@ public class Controllers extends Application {
         isInterviewOk();
     }
 
-    public boolean isCommentOfHr() throws WrongInputExeption {
+    public boolean isCommentOfHr() throws WrongInputException {
         boolean result = false;
         Object object = choiceBoxEstimateOfHr.getSelectionModel().getSelectedItem();
         if (object != null) {
             result = true;
         } else {
             createMassage("ERROR: Не проставлена оценка HR  в третьем блоке");
-            throw new WrongInputExeption("ERROR: Не проставлена оценка HR  в третьем блоке");
+            throw new WrongInputException("ERROR: Не проставлена оценка HR  в третьем блоке");
         }
         return result;
     }

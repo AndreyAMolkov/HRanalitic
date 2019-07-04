@@ -26,7 +26,7 @@ public class BasicInformation implements Serializable {
     private LocalDateTime birthday;
 
 
-    public BasicInformation(String name, String patronymic, String surname, List <String> phonesList, String birthday) throws WrongInputExeption {
+    public BasicInformation(String name, String patronymic, String surname, List<String> phonesList, String birthday) throws WrongInputException {
         this.name = name;
         this.patronymic = patronymic;
         this.surname = surname;
@@ -34,7 +34,7 @@ public class BasicInformation implements Serializable {
         setBirthday(birthday);
     }
 
-    public BasicInformation(String name, String patronymic, String surname, List <String> phonesList, LocalDateTime birthday) throws WrongInputExeption {
+    public BasicInformation(String name, String patronymic, String surname, List<String> phonesList, LocalDateTime birthday) throws WrongInputException {
         this.name = name;
         this.patronymic = patronymic;
         this.surname = surname;
@@ -42,7 +42,7 @@ public class BasicInformation implements Serializable {
         this.birthday = birthday;
     }
 
-    public BasicInformation(String name, String patronymic, String surname, String phone, String birthday) throws WrongInputExeption {
+    public BasicInformation(String name, String patronymic, String surname, String phone, String birthday) throws WrongInputException {
         this.name = name;
         this.patronymic = patronymic;
         this.surname = surname;
@@ -50,7 +50,7 @@ public class BasicInformation implements Serializable {
         setBirthday(birthday);
     }
 
-    public BasicInformation(String name, String patronymic, String surname, String phone, LocalDateTime birthday) throws WrongInputExeption {
+    public BasicInformation(String name, String patronymic, String surname, String phone, LocalDateTime birthday) throws WrongInputException {
         this.name = name;
         this.patronymic = patronymic;
         this.surname = surname;
@@ -61,13 +61,13 @@ public class BasicInformation implements Serializable {
     public BasicInformation() {
     }
 
-    public void setPhone(List <String> phonesList) throws WrongInputExeption {
+    public void setPhone(List<String> phonesList) throws WrongInputException {
         for (String one : phonesList) {
             setPhone(one);
         }
     }
 
-    public boolean setPhone(String phone) throws WrongInputExeption {
+    public boolean setPhone(String phone) throws WrongInputException {
         boolean response = false;
         if (phonesList == null) {
             phonesList = new ArrayList <>();
@@ -103,7 +103,7 @@ public class BasicInformation implements Serializable {
         return birthday;
     }
 
-    public void setBirthday(String birthday) throws WrongInputExeption {
+    public void setBirthday(String birthday) throws WrongInputException {
 
         this.birthday = DataUtils.stringToLocalDate(birthday);
     }
