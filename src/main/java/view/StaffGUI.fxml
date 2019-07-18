@@ -30,10 +30,10 @@
                         </ContextMenu>
                     </contextMenu>
                 </MenuBar>
-                <TabPane layoutX="22.0" layoutY="32.0" prefHeight="829.0" prefWidth="1800.0"
+                <TabPane fx:id="generalTabPane" layoutX="22.0" layoutY="32.0" prefHeight="829.0" prefWidth="1800.0"
                          tabClosingPolicy="UNAVAILABLE">
                     <tabs>
-                        <Tab text="Новый Кандидат">
+                        <Tab fx:id="tabCandidate" text="Новый Кандидат">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
@@ -79,13 +79,18 @@
                                                         <Insets/>
                                                     </opaqueInsets>
                                                     <children>
-                                                        <TextField prefHeight="27.0" prefWidth="175.0"
+                                                        <TextField editable="false" prefHeight="27.0" prefWidth="175.0"
                                                                    text="Фамилия Имя Отчество"/>
-                                                        <TextField text="Дата рождения" GridPane.rowIndex="1"/>
-                                                        <TextField text="Сотовый телефон" GridPane.rowIndex="2"/>
-                                                        <TextField text="Источник" GridPane.rowIndex="3"/>
-                                                        <TextField text="Инициатива" GridPane.rowIndex="4"/>
-                                                        <TextField text="Проект" GridPane.rowIndex="5"/>
+                                                        <TextField editable="false" text="Дата рождения"
+                                                                   GridPane.rowIndex="1"/>
+                                                        <TextField editable="false" text="Сотовый телефон"
+                                                                   GridPane.rowIndex="2"/>
+                                                        <TextField editable="false" text="Источник"
+                                                                   GridPane.rowIndex="3"/>
+                                                        <TextField editable="false" text="Инициатива"
+                                                                   GridPane.rowIndex="4"/>
+                                                        <TextField editable="false" text="Проект"
+                                                                   GridPane.rowIndex="5"/>
                                                         <ChoiceBox fx:id="choiceBoxSource" prefHeight="25.0"
                                                                    prefWidth="477.0" GridPane.columnIndex="1"
                                                                    GridPane.rowIndex="3"/>
@@ -233,22 +238,26 @@
                                                                         </Tab>
                                                                         <Tab fx:id="tabPane1">
                                                                             <content>
-                                                                                <TextField fx:id="textFieldPane1"/>
+                                                                                <TextField fx:id="textFieldPane1"
+                                                                                           editable="false"/>
                                                                             </content>
                                                                         </Tab>
                                                                         <Tab fx:id="tabPane2">
                                                                             <content>
-                                                                                <TextField fx:id="textFieldPane2"/>
+                                                                                <TextField fx:id="textFieldPane2"
+                                                                                           editable="false"/>
                                                                             </content>
                                                                         </Tab>
                                                                         <Tab fx:id="tabPane3">
                                                                             <content>
-                                                                                <TextField fx:id="textFieldPane3"/>
+                                                                                <TextField fx:id="textFieldPane3"
+                                                                                           editable="false"/>
                                                                             </content>
                                                                         </Tab>
                                                                         <Tab fx:id="tabPane4">
                                                                             <content>
-                                                                                <TextField fx:id="textFieldPane4"/>
+                                                                                <TextField fx:id="textFieldPane4"
+                                                                                           editable="false"/>
                                                                             </content>
                                                                         </Tab>
                                                                         <Tab fx:id="tabPane5">
@@ -259,6 +268,7 @@
                                                                         <Tab fx:id="tabPane6">
                                                                             <content>
                                                                                 <TextField fx:id="textFieldPane6"
+                                                                                           editable="false"
                                                                                            prefHeight="25.0"
                                                                                            prefWidth="418.0"/>
                                                                             </content>
@@ -300,7 +310,7 @@
                                                                         onAction="#loadedTestCandidate"
                                                                         text="Load candidate"/>
                                                                 <Button fx:id="buttonReport" mnemonicParsing="false"
-                                                                        onAction="#onCreateReport" text="отчет"/>
+                                                                        text="отчет"/>
                                                             </children>
                                                         </HBox>
                                                     </children>
@@ -428,36 +438,12 @@
                                 </AnchorPane>
                             </content>
                         </Tab>
-                        <Tab text="Список Кандидатов">
+                        <Tab fx:id="tabListCandidates" text="Список Кандидатов">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <TableView fx:id="tableViewCandidate" prefHeight="802.0" prefWidth="1800.0">
-                                            <columns>
-                                                <TableColumn fx:id="tbcPositionOfArray" prefWidth="75.0" text="N%"/>
-                                                <TableColumn fx:id="tbcFIO" prefWidth="116.0"
-                                                             text="Фамилия Имя Отчество"/>
-                                                <TableColumn fx:id="tbcPhone" prefWidth="34.0" text="Телефон"/>
-                                                <TableColumn fx:id="tbcSource" prefWidth="75.0" text="Источник"/>
-                                                <TableColumn fx:id="tbcInitiative" prefWidth="75.0" text="Инициатива"/>
-                                                <TableColumn fx:id="tbcProject" prefWidth="75.0" text="Проект"/>
-                                                <TableColumn fx:id="tbcResultOFCallLast" prefWidth="75.0"
-                                                             text="Результат звонка"/>
-                                                <TableColumn fx:id="tbcInterview" prefWidth="75.0"
-                                                             text="Собеседование"/>
-                                                <TableColumn fx:id="tbcRejectOfInterview" prefWidth="88.0"
-                                                             text="Отказ от Собесед"/>
-                                                <TableColumn fx:id="tbcEstimateOfHr" prefWidth="87.0" text="Оценка HR"/>
-                                                <TableColumn fx:id="tbcResultOfInterview" prefWidth="88.0"
-                                                             text="Итог Собеседования"/>
-                                                <TableColumn fx:id="tbcTraining" prefWidth="82.0" text="Обучение"/>
-                                                <TableColumn fx:id="tbcTrainingFall" prefWidth="84.0"
-                                                             text="Причина провала"/>
-                                                <TableColumn fx:id="tbcEstimateOfCoach" prefWidth="100.0"
-                                                             text="Оценка Наставника"/>
-                                                <TableColumn fx:id="tbcAdaptation" prefWidth="114.0" text="Адаптация "/>
-                                            </columns>
-                                        </TableView>
+                                        <TableView fx:id="tableViewReport" layoutX="10.0" layoutY="33.0"
+                                                   prefHeight="687.0" prefWidth="1785.0"/>
                                     </children>
                                 </AnchorPane>
                             </content>
@@ -479,12 +465,7 @@
                         </Tab>
                         <Tab fx:id="tabPaneReport" text="Отчет">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="783.0" prefWidth="1312.0">
-                                    <children>
-                                        <TableView fx:id="tableViewReport" layoutX="20.0" layoutY="8.0"
-                                                   prefHeight="702.0" prefWidth="1765.0"/>
-                                    </children>
-                                </AnchorPane>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="783.0" prefWidth="1312.0"/>
                             </content>
                         </Tab>
                     </tabs>

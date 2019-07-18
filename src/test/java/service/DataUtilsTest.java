@@ -2,6 +2,7 @@ package service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import model.*;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,18 +18,22 @@ import java.util.Map;
 import static org.junit.Assert.*;
 
 public class DataUtilsTest {
+    BasicInformation basicInformation;
+    Candidate testClassCandidate;
+    Map<String, EventContact> mapEvent;
+
+
+    @Before
+    public void prepare() throws WrongInputException {
+        basicInformation = new BasicInformation("Andrey", "Алексеевич", "Бобков", "8-908-162-89-25", "16.12-2010");
+        testClassCandidate = new Candidate(basicInformation, mapEvent, "hh", "мы", "хар", false);
+        mapEvent = new HashMap<>();
+        mapEvent.put(ResultOfCall.NO_ANSWER.getName(), new EventContact(ResultOfCall.NO_ANSWER.getName()));
+    }
 
     @Test
-    public void recordToFile() throws WrongInputException, NotFoundExeption, JsonProcessingException {
-        Candidate testClass;
-        Map <String, EventContact> mapEvent = new HashMap <>();
-        mapEvent.put(ResultOfCall.NO_ANSWER.getName(), new EventContact(ResultOfCall.NO_ANSWER.getName()));
-        BasicInformation basicInformation = new BasicInformation("Andrey", "Алексеевич", "Бобков", "8-908-162-89-25", "16.12-2010");
-        testClass = new Candidate(basicInformation, mapEvent, "hh", "мы", "хар");
-
-        LocalDateTime begin = LocalDateTime.now();
-
-        String result = DataUtils.writeToFile(testClass, null, true);
+    public void recordToFile() throws WrongInputException, JsonProcessingException {
+        String result = DataUtils.writeToFile(testClassCandidate, null, true);
         assertNotNull(result);
     }
 
@@ -122,13 +128,13 @@ public class DataUtilsTest {
     }
 
     @Test(expected = WrongInputException.class)
-    public void getFIOfromStringWrong() {
+    public void testGetFIOfromStringWrong() {
         String line = "Мушкин    ";
         Map <String, String> map;
     }
 
     @Test
-    public void getFIOfromString2() throws WrongInputException {
+    public void testGetFIOfromString2() throws WrongInputException {
         String line = " Мушкин    Казимир  ";
         Map <String, String> map;
         map = DataUtils.getFIOfromString(line);
@@ -137,5 +143,46 @@ public class DataUtilsTest {
         assertEquals("Казимир", map.get(Constants.NAME));
     }
 
+    @Test
+    public void testIsNotNullParam() throws WrongInputException {
+        BasicInformation wrongBasicInformation = new BasicInformation("Andrey", "Алексеевич", "Бобков", "8-908-162-89-25", "17.12-2010");
+        Candidate wrongCandidate = new Candidate(wrongBasicInformation, mapEvent, "hh", "мы", "хар", false);
 
+        List<Candidate> list = new ArrayList<>();
+        list.add(testClassCandidate);
+        list.add(wrongCandidate);
+        assertTrue(DataUtils.isInclude(testClassCandidate, list));
+
+        assertFalse(DataUtils.isInclude(testClassCandidate, new ArrayList<>()));
+
+        list.clear();
+        list.add(wrongCandidate);
+        assertFalse(DataUtils.isInclude(testClassCandidate, list));
+
+        wrongBasicInformation.setBirthday((LocalDateTime) null);
+        assertFalse(DataUtils.isInclude(testClassCandidate, list));
+
+        wrongBasicInformation.setBirthday(testClassCandidate.getBasicInformation().getBirthday());
+        wrongBasicInformation.setSurname(testClassCandidate.getBasicInformation().getSurname() + "  ");
+        assertTrue(DataUtils.isInclude(testClassCandidate, list));
+
+        wrongBasicInformation.setSurname("  ");
+        assertFalse(DataUtils.isInclude(testClassCandidate, list));
+
+    }
+
+    @Test(expected = WrongInputException.class)
+    public void testIsNotNullParamException() throws WrongInputException {
+        DataUtils.isInclude(null, new ArrayList<>());
+    }
+
+    public void testGetCollectDataViaCandidate() throws WrongInputException {
+        CollectData collectData = new CollectData(testClassCandidate, 0);
+        List<CollectData> list = new ArrayList<>();
+        list.add(null);
+        list.add(collectData);
+        CollectData actual = DataUtils.getCollectDataViaCandidate(testClassCandidate, list);
+        assertNotNull(actual);
+        assertEquals(0, actual.getPosition());
+    }
 }

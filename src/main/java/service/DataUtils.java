@@ -431,4 +431,47 @@ public class DataUtils {
         return eventContact;
     }
 
+    public static boolean isInclude(Candidate candidate, List<Candidate> list) throws WrongInputException {
+        if (!isNotNullParam(candidate)) {
+            throw new WrongInputException("Error: пустые поля фамилии и даты рождения для нового кандидата");
+        }
+        String surname = candidate.getBasicInformation().getSurname();
+        LocalDateTime birthday = candidate.getBasicInformation().getBirthday();
+
+        for (Candidate one : list) {
+            if (isNotNullParam(one) && birthday.isEqual(one.getBasicInformation().getBirthday()) && surname.trim().equals(one.getBasicInformation().getSurname().trim())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static CollectData getCollectDataViaCandidate(Candidate candidate, List<CollectData> list) throws WrongInputException {
+        if (!isNotNullParam(candidate)) {
+            throw new WrongInputException("Error: пустые поля фамилии и даты рождения для нового кандидата");
+        }
+        String surname = candidate.getBasicInformation().getSurname();
+        String birthday = candidate.getBasicInformation().getBirthdayString();
+        if (list == null) {
+            return null;
+        }
+        for (CollectData one : list) {
+            if (isNotNullParam(one) && birthday.equals(one.getBirthday()) && one.getFio().contains(surname)) {
+                return one;
+            }
+        }
+        return null;
+    }
+
+    private static boolean isNotNullParam(Candidate candidate) {
+
+        return (candidate != null && candidate.getBasicInformation() != null && candidate.getBasicInformation().getBirthday() != null && candidate.getBasicInformation().getSurname() != null && !candidate.getBasicInformation().getSurname().isEmpty());
+    }
+
+    private static boolean isNotNullParam(CollectData collectData) {
+
+        return (collectData != null && collectData.getFio() != null && collectData.getBirthday() != null && !collectData.getBirthday().isEmpty() && !collectData.getFio().isEmpty());
+    }
+
+
 }

@@ -23,7 +23,7 @@ public class AssertBooleanTest {
 
     EventContact(ResultOfCall.NO_ANSWER.getName()));
     BasicInformation basicInformation = new BasicInformation("Andrey", "Алексеевич", "Бобков", "8-908-162-89-25", "16.12-2010");
-    testClass =new Candidate(basicInformation, mapEvent, "hh","мы","хар");
+        testClass = new Candidate(basicInformation, mapEvent, "hh", "мы", "хар", false);
 
     LocalDateTime begin = LocalDateTime.now();
 
@@ -40,7 +40,7 @@ public void checkBooleanTestException() throws WrongInputException, JsonProcessi
         Map <String, EventContact> mapEvent = new HashMap <>();
         mapEvent.put(ResultOfCall.NO_ANSWER.getName(),new EventContact(ResultOfCall.NO_ANSWER.getName()));
         BasicInformation basicInformation = new BasicInformation("Andrey", "Алексеевич", "Бобков", "8-908-162-89-25", "16.12-2010");
-        testClass =new Candidate(basicInformation, mapEvent, "hh","мы","хар");
+    testClass = new Candidate(basicInformation, mapEvent, "hh", "мы", "хар", false);
 
   //      try {
             testClass.setCallTo("ggg");
@@ -62,7 +62,7 @@ public void checkBooleanTestException() throws WrongInputException, JsonProcessi
         Map <String, EventContact> mapEvent = new HashMap <>();
         mapEvent.put(ResultOfCall.NO_ANSWER.getName(),new EventContact(ResultOfCall.NO_ANSWER.getName()));
         BasicInformation basicInformation = new BasicInformation("Andrey", "Алексеевич", "Бобков", "8-908-162-89-25", "16.12-2010");
-        testClass =new Candidate(basicInformation, mapEvent, "hh","мы","хар");
+        testClass = new Candidate(basicInformation, mapEvent, "hh", "мы", "хар", false);
 
 
             testClass.setCallTo(null);

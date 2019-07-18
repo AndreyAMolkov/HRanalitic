@@ -12,7 +12,7 @@ import java.util.Map;
 @JsonIgnoreProperties(value = {"position", "fio"})
 public class Candidate {
 
-    private int position;
+    private Integer position;
     private BasicInformation BasicInformation;
     private Map <String, EventContact> eventMap;
     private boolean callTo;
@@ -31,16 +31,17 @@ public class Candidate {
         this.callTo = callTo;
     }
 
-    public Candidate(model.BasicInformation basicInformation, Map <String, EventContact> eventMap, String source, String initiative, String project) {
+    public Candidate(model.BasicInformation basicInformation, Map<String, EventContact> eventMap, String source, String initiative, String project, boolean callTo) {
         BasicInformation = basicInformation;
         this.eventMap = eventMap;
         this.initiative = initiative;
         this.source = source;
         this.project = project;
         this.result = null;
+        this.callTo = callTo;
     }
 
-    public Candidate(int position, model.BasicInformation basicInformation, Map <String, EventContact> eventMap, String initiative, String source, String project, EventContact result) {
+    public Candidate(int position, model.BasicInformation basicInformation, Map<String, EventContact> eventMap, String initiative, String source, String project, EventContact result, boolean callTo) {
         this.position = position;
         BasicInformation = basicInformation;
         this.eventMap = eventMap;
@@ -48,6 +49,7 @@ public class Candidate {
         this.source = source;
         this.project = project;
         this.result = result;
+        this.callTo = callTo;
     }
 
     public Candidate() {
@@ -170,16 +172,13 @@ public class Candidate {
                 '}';
     }
 
-    public String getFIO() {
-        String FI = getBasicInformation().getPatronymic() + " " + getBasicInformation().getName();
-        if (StringUtils.isEmpty(getBasicInformation().getSurname())) {
-            return FI;
-        }
-        return FI + " " + getBasicInformation().getPatronymic();
+    public String getFio() {
+        String fio = getBasicInformation().getSurname() + " " + getBasicInformation().getName() + " " + getBasicInformation().getPatronymic();
+        return fio.trim();
 
     }
 
-    public int getPosition() {
+    public Integer getPosition() {
         return position;
     }
 
@@ -201,8 +200,9 @@ public class Candidate {
         if(callTo == null){
             System.out.println("Error of NOT_NULL");
         }
-        if("true".equals(callTo.toLowerCase())|| "false".equals(callTo.toLowerCase())){
+        if (!"true".equals(callTo.toLowerCase()) && !"false".equals(callTo.toLowerCase())) {
             System.out.println("Error of NOT TRUE OR FALSE");
+            System.out.println(callTo);
         }
         this.callTo = "true".equals(callTo.toLowerCase());
     }

@@ -29,12 +29,12 @@ public final class Constants {
     public final static String FORMAT_TIME = "чч:мм";
     public final static String EMPTY = "пусто";
     public final static String FOR = " для ";
-    public final static String WRONG_FORMAT = "Неправильный формат ";
+    public final static String WRONG_FORMAT = " Неправильный формат ";
     public final static String WRONG_FORMAT_PHONE = WRONG_FORMAT + "сотового телефона - длина должна быть ";
     public final static String WRONG_FORMAT_DATE = WRONG_FORMAT + "даты - ";
     public final static String WRONG_FORMAT_TIME = WRONG_FORMAT + "времени - ";
-    public final static String WRONG_FORMAT_ENUM = "Неоднозначный результат, найдено больше одного";
-    public final static String NOT_FOUND = "Не нашел значения для ";
+    public final static String WRONG_FORMAT_ENUM = " Неоднозначный результат, найдено больше одного";
+    public final static String NOT_FOUND = " Не нашел значения для ";
     public final static String MONTH = "month";
     public final static String YEAR = "year";
     public final static String DAY = "day";

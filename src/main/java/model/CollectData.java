@@ -255,7 +255,7 @@ public class CollectData {
     }
 
     private void setFio(Candidate candidate) {
-        this.fio = candidate.getFIO();
+        this.fio = candidate.getFio();
     }
 
     public String getDateOfCommentOfResult() {
@@ -330,15 +330,18 @@ public class CollectData {
         this.commentOfCall0 = commentOfCall0;
     }
 
-    public LocalDateTime getDateOfCommentOfCall0() throws WrongInputException {
-        try {
-            return DataUtils.stringToLocalDate(dateOfCommentOfCall0);
-        } catch (WrongInputException e) {
-            return null;
-        }
+//    public LocalDateTime getDateOfCommentOfCall0() throws WrongInputException {
+//        try {
+//            return DataUtils.stringToLocalDate(dateOfCommentOfCall0);
+//        } catch (WrongInputException e) {
+//            return null;
+//        }
+//
+//    }
 
+    public String getDateOfCommentOfCall0() {
+        return dateOfCommentOfCall0;
     }
-
     public void setDateOfCommentOfCall0(LocalDateTime dateOfCommentOfCall0) {
         this.dateOfCommentOfCall0 = DataUtils.convertLocalDateTimeToString(dateOfCommentOfCall0);
     }

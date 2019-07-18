@@ -1,33 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2900c22f-b65e-409f-a35f-69c211856c93" name="Default Changelist" comment="sonar">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/WrongInputException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="2900c22f-b65e-409f-a35f-69c211856c93" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/AnswerOfCallConversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/AnswerOfCallConversation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/BasicInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/BasicInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Candidate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/CollectData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CollectData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/EnumInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/EnumInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/EstimateOfHR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/EstimateOfHR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/EventContact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/EventContact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Initiative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Initiative.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ResultInterview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ResultInterview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ResultOfAdaptation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ResultOfAdaptation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ResultOfCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ResultOfCall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Source.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/WrongInputExeption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/CreateReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/CreateListCandidates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/DataUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/DataUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Controllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/EventContactTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/EventContactTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/StaffGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/StaffGUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/service/DataUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/DataUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/service/LocalDateTimeSerializerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/LocalDateTimeSerializerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/validators/AssertBooleanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/validators/AssertBooleanTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../searchText/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../searchText/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../searchText/src/main/java/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../searchText/src/main/java/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../searchText/src/main/java/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../searchText/src/main/java/sample/sample.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,10 +30,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/validators/AssertBooleanTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/view/Controllers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="6970">
+              <caret line="426" column="17" selection-start-line="426" selection-start-column="17" selection-end-line="426" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,10 +42,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Candidate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2346">
+              <caret line="169" column="48" selection-start-line="169" selection-start-column="48" selection-end-line="169" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/CreateListCandidates.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="200" column="51" selection-start-line="200" selection-start-column="51" selection-end-line="200" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#9536#9537#0" expanded="true" />
+                <element signature="e#9626#9627#0" expanded="true" />
+                <element signature="e#12808#12809#0" expanded="true" />
+                <element signature="e#13486#13487#0" expanded="true" />
+                <element signature="e#14158#14159#0" expanded="true" />
+                <element signature="e#14826#14827#0" expanded="true" />
+                <element signature="e#15050#15051#0" expanded="true" />
+                <element signature="e#15145#15146#0" expanded="true" />
+                <element signature="e#15236#15237#0" expanded="true" />
+                <element signature="e#15347#15348#0" expanded="true" />
+                <element signature="e#15450#15451#0" expanded="true" />
+                <element signature="e#15692#15693#0" expanded="true" />
+                <element signature="e#15935#15936#0" expanded="true" />
+                <element signature="e#16069#16070#0" expanded="true" />
+                <element signature="e#16375#16376#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/DataUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="325" lean-forward="true" selection-start-line="325" selection-end-line="325" />
+            <state relative-caret-position="166">
+              <caret line="214" column="64" selection-start-line="214" selection-start-column="64" selection-end-line="214" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#convertStringToBasicInformation#0;class#DataUtils#0" />
@@ -70,78 +107,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/Initiative.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/EventContact.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/ResultOfCall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/AnswerOfCallConversation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/model/EventContactTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="37" column="70" lean-forward="true" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/service/LocalDateTimeSerializerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/ResultOfAdaptation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/EstimateOfHR.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="26" column="43" lean-forward="true" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/service/DataUtilsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="125" column="35" lean-forward="true" selection-start-line="125" selection-start-column="35" selection-end-line="125" selection-end-column="35" />
+            <state relative-caret-position="311">
+              <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#readFromFile#0;class#DataUtilsTest#0" />
-                <element signature="method#stringToDate#0;class#DataUtilsTest#0" />
-                <element signature="method#stringToDateWrong#0;class#DataUtilsTest#0" />
               </folding>
             </state>
           </provider>
@@ -160,24 +131,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getDateTimeInterview</find>
-      <find>dateTimeString</find>
-      <find>dateTime</find>
-      <find>DateTimeFormatter</find>
-      <find>dateOfComment</find>
-      <find>dateTimeInterview</find>
-      <find>set</find>
-      <find>col</find>
-      <find>collectData</find>
-      <find>tableColumnsListSecondBlock</find>
-      <find>create</find>
-      <find>createCheckBoxLi</find>
-      <find>tableView</find>
-      <find>Source</find>
-      <find>getListNameOfEnum</find>
-      <find>try</find>
-      <find>load</find>
-      <find>cle</find>
       <find>DAT</find>
       <find>getDAT</find>
       <find>catch</find>
@@ -190,6 +143,24 @@
       <find>iscall</find>
       <find>CallTo</find>
       <find>WrongInputExeption</find>
+      <find>commentOfCall0</find>
+      <find>radioButtonCallNo</find>
+      <find>oncr</find>
+      <find>tableViewReport</find>
+      <find>writ</find>
+      <find>initi</find>
+      <find>initia</find>
+      <find>loger</find>
+      <find>collectDataList</find>
+      <find>createR</find>
+      <find>Tabpane</find>
+      <find>gen</find>
+      <find>creater</find>
+      <find>SelectionModel</find>
+      <find>selectionModel</find>
+      <find>createEventBlock</find>
+      <find>generalT</find>
+      <find>setVisibleTableColumn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -198,7 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/model/dateOfContact.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Event.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Rejection.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/NotFoundExeption.java" />
@@ -221,10 +191,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/service/LocalDateTimeSerializer.java" />
         <option value="$PROJECT_DIR$/src/test/java/service/LocalDateTimeDeserializerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/mainGUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Loger.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/CreateReport.java" />
         <option value="$PROJECT_DIR$/src/main/java/validators/PersonAgeConstraint.java" />
         <option value="$PROJECT_DIR$/src/main/java/validators/PersonAgeConstraintValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/validators/AssertBooleanConstraintValidator.java" />
@@ -236,19 +204,22 @@
         <option value="$PROJECT_DIR$/src/main/java/model/Source.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/EventContact.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/BasicInformation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/Controllers.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/CollectData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Candidate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/DataUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Initiative.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ResultOfCall.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/EstimateOfHR.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/AnswerOfCallConversation.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ResultOfAdaptation.java" />
-        <option value="$PROJECT_DIR$/src/test/java/service/DataUtilsTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/validators/AssertBooleanTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/model/EventContactTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/service/LocalDateTimeSerializerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/validators/AssertBooleanTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/service/DataUtilsTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Candidate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/CollectData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/DataUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/CreateReport.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/Controllers.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/CreateListCandidates.java" />
       </list>
     </option>
   </component>
@@ -261,10 +232,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="273" />
-    <option name="y" value="138" />
-    <option name="width" value="1296" />
-    <option name="height" value="688" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -313,7 +284,44 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HrAnalitic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HrAnalitic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="validators" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HrAnalitic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HrAnalitic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HrAnalitic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HrAnalitic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HrAnalitic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HrAnalitic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HrAnalitic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HrAnalitic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -323,6 +331,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
@@ -418,8 +427,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataUtilsTest.convertLocalDateTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HrResecher" />
+    <configuration name="DataUtilsTest.tesIsNotNullParam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HrAnalitic" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="service.*" />
@@ -428,14 +437,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="service" />
       <option name="MAIN_CLASS_NAME" value="service.DataUtilsTest" />
-      <option name="METHOD_NAME" value="convertLocalDateTime" />
+      <option name="METHOD_NAME" value="tesIsNotNullParam" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocalDateTimeDeserializerTest.deserializeCandidateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HrResecher" />
+    <configuration name="DataUtilsTest.testIsNotNullParam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HrAnalitic" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="service.*" />
@@ -443,8 +452,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="service" />
-      <option name="MAIN_CLASS_NAME" value="service.LocalDateTimeDeserializerTest" />
-      <option name="METHOD_NAME" value="deserializeCandidateTest" />
+      <option name="MAIN_CLASS_NAME" value="service.DataUtilsTest" />
+      <option name="METHOD_NAME" value="testIsNotNullParam" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataUtilsTest.testIsNotNullParamException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HrAnalitic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.DataUtilsTest" />
+      <option name="METHOD_NAME" value="testIsNotNullParamException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -452,10 +477,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataUtilsTest.testIsNotNullParamException" />
+        <item itemvalue="JUnit.DataUtilsTest.testIsNotNullParam" />
+        <item itemvalue="JUnit.DataUtilsTest.tesIsNotNullParam" />
         <item itemvalue="JUnit.AssertBooleanTest" />
         <item itemvalue="JUnit.AssertBooleanTest.checkBooleanTestException" />
-        <item itemvalue="JUnit.DataUtilsTest.convertLocalDateTime" />
-        <item itemvalue="JUnit.LocalDateTimeDeserializerTest.deserializeCandidateTest" />
       </list>
     </recent_temporary>
   </component>
@@ -484,39 +510,46 @@
       <option name="project" value="LOCAL" />
       <updated>1560274715228</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="encoding + spelling">
+      <created>1562241803618</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562241803618</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AssertBooleanTest - 2019.06.11 at 22h 02m 32s.xml">
-      <configuration name="AssertBooleanTest" configurationId="JUnit" />
+    <history-entry file="DataUtilsTest_testIsNotNullParam - 2019.07.11 at 15h 58m 59s.xml">
+      <configuration name="DataUtilsTest.testIsNotNullParam" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AssertBooleanTest - 2019.06.11 at 22h 04m 38s.xml">
-      <configuration name="AssertBooleanTest" configurationId="JUnit" />
+    <history-entry file="DataUtilsTest_testIsNotNullParam - 2019.07.11 at 15h 59m 38s.xml">
+      <configuration name="DataUtilsTest.testIsNotNullParam" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AssertBooleanTest - 2019.06.11 at 22h 04m 58s.xml">
-      <configuration name="AssertBooleanTest" configurationId="JUnit" />
+    <history-entry file="DataUtilsTest_testIsNotNullParam - 2019.07.11 at 16h 01m 40s.xml">
+      <configuration name="DataUtilsTest.testIsNotNullParam" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AssertBooleanTest - 2019.06.11 at 22h 14m 57s.xml">
-      <configuration name="AssertBooleanTest" configurationId="JUnit" />
+    <history-entry file="DataUtilsTest_testIsNotNullParam - 2019.07.11 at 16h 03m 16s.xml">
+      <configuration name="DataUtilsTest.testIsNotNullParam" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AssertBooleanTest - 2019.06.11 at 22h 15m 13s.xml">
-      <configuration name="AssertBooleanTest" configurationId="JUnit" />
+    <history-entry file="DataUtilsTest_testIsNotNullParam - 2019.07.11 at 16h 03m 34s.xml">
+      <configuration name="DataUtilsTest.testIsNotNullParam" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AssertBooleanTest - 2019.06.11 at 22h 15m 43s.xml">
-      <configuration name="AssertBooleanTest" configurationId="JUnit" />
+    <history-entry file="DataUtilsTest_testIsNotNullParam - 2019.07.11 at 16h 06m 09s.xml">
+      <configuration name="DataUtilsTest.testIsNotNullParam" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AssertBooleanTest - 2019.06.11 at 22h 18m 11s.xml">
-      <configuration name="AssertBooleanTest" configurationId="JUnit" />
+    <history-entry file="DataUtilsTest_testIsNotNullParamException - 2019.07.11 at 16h 06m 44s.xml">
+      <configuration name="DataUtilsTest.testIsNotNullParamException" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AssertBooleanTest - 2019.06.11 at 22h 21m 24s.xml">
-      <configuration name="AssertBooleanTest" configurationId="JUnit" />
+    <history-entry file="DataUtilsTest_testIsNotNullParamException - 2019.07.16 at 18h 42m 54s.xml">
+      <configuration name="DataUtilsTest.testIsNotNullParamException" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AssertBooleanTest - 2019.06.11 at 22h 28m 03s.xml">
-      <configuration name="AssertBooleanTest" configurationId="JUnit" />
+    <history-entry file="DataUtilsTest_testIsNotNullParamException - 2019.07.17 at 11h 20m 37s.xml">
+      <configuration name="DataUtilsTest.testIsNotNullParamException" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AssertBooleanTest - 2019.06.11 at 22h 29m 15s.xml">
-      <configuration name="AssertBooleanTest" configurationId="JUnit" />
+    <history-entry file="DataUtilsTest_testIsNotNullParamException - 2019.07.17 at 11h 46m 59s.xml">
+      <configuration name="DataUtilsTest.testIsNotNullParamException" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -532,8 +565,8 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23614073" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49818182" visible="true" weight="0.24946696" />
+      <window_info id="Structure" order="1" sideWeight="0.5018182" side_tool="true" visible="true" weight="0.24946696" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -541,15 +574,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40411702" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.23943663" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40411702" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5417118" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5010661" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989339" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="11" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="bottom" id="SonarLint" order="12" weight="0.32936078" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -572,7 +605,8 @@
     </ignored-roots>
     <MESSAGE value="first" />
     <MESSAGE value="sonar" />
-    <option name="LAST_COMMIT_MESSAGE" value="sonar" />
+    <MESSAGE value="encoding + spelling" />
+    <option name="LAST_COMMIT_MESSAGE" value="encoding + spelling" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -600,43 +634,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/view/Controllers.java</url>
-          <line>325</line>
+          <line>361</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/view/Controllers.java</url>
-          <line>627</line>
+          <line>710</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/view/Controllers.java</url>
-          <line>317</line>
+          <line>353</line>
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/view/Controllers.java</url>
-          <line>288</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/Controllers.java</url>
-          <line>268</line>
+          <line>270</line>
           <properties />
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/view/Controllers.java</url>
-          <line>308</line>
-          <properties />
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/Controllers.java</url>
-          <line>312</line>
+          <line>348</line>
           <properties />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
@@ -654,7 +676,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/service/DataUtilsTest.java</url>
-          <line>29</line>
+          <line>35</line>
           <properties />
           <option name="timeStamp" value="59" />
         </line-breakpoint>
@@ -708,57 +730,68 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/model/Candidate.java</url>
-          <line>145</line>
+          <line>147</line>
           <properties />
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/model/Candidate.java</url>
-          <line>151</line>
+          <line>153</line>
           <properties />
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/service/CreateReport.java</url>
-          <line>104</line>
+          <url>file://$PROJECT_DIR$/src/main/java/service/CreateListCandidates.java</url>
+          <line>106</line>
           <properties />
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/Controllers.java</url>
-          <line>552</line>
-          <properties />
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/validators/AssertBooleanTest.java</url>
-          <line>54</line>
+          <line>47</line>
           <properties />
           <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/Controllers.java</url>
+          <line>286</line>
+          <properties />
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/Controllers.java</url>
+          <line>284</line>
+          <properties />
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/service/DataUtilsTest.java</url>
+          <line>165</line>
+          <properties />
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/service/DataUtilsTest.java</url>
+          <line>157</line>
+          <properties />
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/service/DataUtils.java</url>
+          <line>433</line>
+          <properties />
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/service/CreateListCandidates.java</url>
+          <line>218</line>
+          <properties />
+          <option name="timeStamp" value="124" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/statements/InvokeMethod.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/scene/control/ChoiceBox.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/ResultOfTraining.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/scene/control/Button.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/json/json/20180813/json-20180813.jar!/org/json/JSONObject.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/myconfig.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/StaffGUI.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../StaffDemo/src/main/java/model/Store.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/time/LocalDateTime.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/Map.java" />
@@ -802,46 +835,6 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/scene/Node.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/CreateReport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="216" column="28" lean-forward="true" selection-start-line="216" selection-start-column="28" selection-end-line="216" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5229#6381#0" />
-            <element signature="e#9239#9240#0" expanded="true" />
-            <element signature="e#9327#9328#0" expanded="true" />
-            <element signature="e#6991#7128#0" />
-            <element signature="e#7471#7472#0" expanded="true" />
-            <element signature="e#7516#7517#0" expanded="true" />
-            <element signature="e#8146#8147#0" expanded="true" />
-            <element signature="e#8192#8193#0" expanded="true" />
-            <element signature="e#8693#8694#0" expanded="true" />
-            <element signature="e#8738#8739#0" expanded="true" />
-            <element signature="e#9235#9236#0" expanded="true" />
-            <element signature="e#9280#9281#0" expanded="true" />
-            <element signature="e#9472#9473#0" expanded="true" />
-            <element signature="e#9504#9505#0" expanded="true" />
-            <element signature="e#9557#9558#0" expanded="true" />
-            <element signature="e#9599#9600#0" expanded="true" />
-            <element signature="e#9660#9661#0" expanded="true" />
-            <element signature="e#9690#9691#0" expanded="true" />
-            <element signature="e#9763#9764#0" expanded="true" />
-            <element signature="e#9801#9802#0" expanded="true" />
-            <element signature="e#9868#9869#0" expanded="true" />
-            <element signature="e#9904#9905#0" expanded="true" />
-            <element signature="e#10108#10109#0" expanded="true" />
-            <element signature="e#10146#10147#0" expanded="true" />
-            <element signature="e#10352#10353#0" expanded="true" />
-            <element signature="e#10389#10390#0" expanded="true" />
-            <element signature="e#10471#10472#0" expanded="true" />
-            <element signature="e#10523#10524#0" expanded="true" />
-            <element signature="e#12407#12408#0" expanded="true" />
-            <element signature="e#12467#12468#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Loger.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -869,47 +862,10 @@
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/validators/AssertBoolean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/validators/AssertBooleanConstraintValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="86" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/mainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/WrongInputException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -941,70 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/EventContact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="104" column="52" lean-forward="true" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2569#2570#0" expanded="true" />
-            <element signature="e#2609#2610#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/BasicInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="105" column="65" selection-start-line="105" selection-start-column="65" selection-end-line="105" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/Controllers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="597" column="47" lean-forward="true" selection-start-line="597" selection-start-column="47" selection-end-line="597" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/CollectData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="335" column="30" selection-start-line="335" selection-start-column="30" selection-end-line="335" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Candidate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="149" column="43" selection-start-line="149" selection-start-column="43" selection-end-line="149" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/DataUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="325" lean-forward="true" selection-start-line="325" selection-end-line="325" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#convertStringToBasicInformation#0;class#DataUtils#0" />
-            <element signature="method#convertYYmmDDtoDDmmYY#0;class#DataUtils#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Initiative.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -1033,17 +925,214 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/model/EventContactTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="37" column="70" lean-forward="true" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/validators/AssertBoolean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55063">
+          <caret line="3472" selection-start-line="3472" selection-end-line="3472" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/WrongInputException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/validators/AssertBooleanTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="61" column="63" selection-start-line="61" selection-start-column="63" selection-end-line="61" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/service/LocalDateTimeSerializerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/validators/AssertBooleanConstraintValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/ResultOfAdaptation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/repo/datastore/src/providers/customerManagement/customerManagementNetworkOptions.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/repo/datastore/src/providers/customerManagement/customerManagementNetworkProvider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1479" />
+      </provider>
+    </entry>
+    <entry file="file://D:/repo/datastore/src/providers/customerManagement/customerManagementProvider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1276" />
+      </provider>
+    </entry>
+    <entry file="file://D:/repo/datastore/src/providers/customerManagement/customerManagementProviderURL.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-203" />
+      </provider>
+    </entry>
+    <entry file="file://D:/repo/datastore/src/config/contextStoreConfiguration_api.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/BasicInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1280">
+          <caret line="93" column="21" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/CollectData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1655">
+          <caret line="622" column="32" selection-start-line="622" selection-start-column="32" selection-end-line="622" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9717#9718#0" expanded="true" />
+            <element signature="e#9762#9763#0" expanded="true" />
+            <element signature="e#11562#11563#0" expanded="true" />
+            <element signature="e#11609#11610#0" expanded="true" />
+            <element signature="e#11978#11979#0" expanded="true" />
+            <element signature="e#12025#12026#0" expanded="true" />
+            <element signature="e#12070#12071#0" expanded="true" />
+            <element signature="e#12111#12112#0" expanded="true" />
+            <element signature="e#12179#12180#0" expanded="true" />
+            <element signature="e#12239#12240#0" expanded="true" />
+            <element signature="e#12951#12952#0" expanded="true" />
+            <element signature="e#13005#13006#0" expanded="true" />
+            <element signature="e#13054#13055#0" expanded="true" />
+            <element signature="e#13098#13099#0" expanded="true" />
+            <element signature="e#13290#13291#0" expanded="true" />
+            <element signature="e#13336#13337#0" expanded="true" />
+            <element signature="e#13376#13377#0" expanded="true" />
+            <element signature="e#13412#13413#0" expanded="true" />
+            <element signature="e#13470#13471#0" expanded="true" />
+            <element signature="e#13520#13521#0" expanded="true" />
+            <element signature="e#14120#14121#0" expanded="true" />
+            <element signature="e#14159#14160#0" expanded="true" />
+            <element signature="e#14223#14224#0" expanded="true" />
+            <element signature="e#14279#14280#0" expanded="true" />
+            <element signature="e#14323#14324#0" expanded="true" />
+            <element signature="e#14363#14364#0" expanded="true" />
+            <element signature="e#14429#14430#0" expanded="true" />
+            <element signature="e#14487#14488#0" expanded="true" />
+            <element signature="e#14529#14530#0" expanded="true" />
+            <element signature="e#14567#14568#0" expanded="true" />
+            <element signature="e#14629#14630#0" expanded="true" />
+            <element signature="e#14683#14684#0" expanded="true" />
+            <element signature="e#14728#14729#0" expanded="true" />
+            <element signature="e#14769#14770#0" expanded="true" />
+            <element signature="e#14837#14838#0" expanded="true" />
+            <element signature="e#14897#14898#0" expanded="true" />
+            <element signature="e#14948#14949#0" expanded="true" />
+            <element signature="e#14995#14996#0" expanded="true" />
+            <element signature="e#15179#15180#0" expanded="true" />
+            <element signature="e#15210#15211#0" expanded="true" />
+            <element signature="e#15255#15256#0" expanded="true" />
+            <element signature="e#15295#15296#0" expanded="true" />
+            <element signature="e#15334#15335#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="e#15461#15462#0" expanded="true" />
+            <element signature="e#15495#15496#0" expanded="true" />
+            <element signature="e#15525#15526#0" expanded="true" />
+            <element signature="e#15559#15560#0" expanded="true" />
+            <element signature="e#15588#15589#0" expanded="true" />
+            <element signature="e#15633#15634#0" expanded="true" />
+            <element signature="e#15669#15670#0" expanded="true" />
+            <element signature="e#15721#15722#0" expanded="true" />
+            <element signature="e#15769#15770#0" expanded="true" />
+            <element signature="e#15966#15967#0" expanded="true" />
+            <element signature="e#16003#16004#0" expanded="true" />
+            <element signature="e#16063#16064#0" expanded="true" />
+            <element signature="e#16115#16116#0" expanded="true" />
+            <element signature="e#16162#16163#0" expanded="true" />
+            <element signature="e#16205#16206#0" expanded="true" />
+            <element signature="e#16382#16383#0" expanded="true" />
+            <element signature="e#16419#16420#0" expanded="true" />
+            <element signature="e#16479#16480#0" expanded="true" />
+            <element signature="e#16531#16532#0" expanded="true" />
+            <element signature="e#16578#16579#0" expanded="true" />
+            <element signature="e#16621#16622#0" expanded="true" />
+            <element signature="e#16798#16799#0" expanded="true" />
+            <element signature="e#16835#16836#0" expanded="true" />
+            <element signature="e#16895#16896#0" expanded="true" />
+            <element signature="e#16947#16948#0" expanded="true" />
+            <element signature="e#16994#16995#0" expanded="true" />
+            <element signature="e#17037#17038#0" expanded="true" />
+            <element signature="e#17214#17215#0" expanded="true" />
+            <element signature="e#17251#17252#0" expanded="true" />
+            <element signature="e#17311#17312#0" expanded="true" />
+            <element signature="e#17363#17364#0" expanded="true" />
+            <element signature="e#17410#17411#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17630#17631#0" expanded="true" />
+            <element signature="e#17667#17668#0" expanded="true" />
+            <element signature="e#17727#17728#0" expanded="true" />
+            <element signature="e#17779#17780#0" expanded="true" />
+            <element signature="e#17826#17827#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#18046#18047#0" expanded="true" />
+            <element signature="e#18083#18084#0" expanded="true" />
+            <element signature="e#18143#18144#0" expanded="true" />
+            <element signature="e#18195#18196#0" expanded="true" />
+            <element signature="e#18242#18243#0" expanded="true" />
+            <element signature="e#18285#18286#0" expanded="true" />
+            <element signature="e#18465#18466#0" expanded="true" />
+            <element signature="e#18505#18506#0" expanded="true" />
+            <element signature="e#18571#18572#0" expanded="true" />
+            <element signature="e#18629#18630#0" expanded="true" />
+            <element signature="e#18679#18680#0" expanded="true" />
+            <element signature="e#18725#18726#0" expanded="true" />
+            <element signature="e#18934#18935#0" expanded="true" />
+            <element signature="e#18997#18998#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/service/DataUtilsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="125" column="35" lean-forward="true" selection-start-line="125" selection-start-column="35" selection-end-line="125" selection-end-column="35" />
+        <state relative-caret-position="179">
+          <caret line="174" column="52" selection-start-line="174" selection-start-column="52" selection-end-line="174" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#readFromFile#0;class#DataUtilsTest#0" />
@@ -1053,27 +1142,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/validators/AssertBooleanTest.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="17">
+          <caret line="8411" selection-start-line="8411" selection-end-line="8411" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/control/CheckBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="240" selection-start-line="240" selection-end-line="240" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/event/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/control/MenuItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="462" selection-start-line="462" selection-end-line="462" />
+          <folding>
+            <element signature="e#10057#10058#0" expanded="true" />
+            <element signature="e#10103#10104#0" expanded="true" />
+            <element signature="e#15741#15742#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/Controllers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6970">
+          <caret line="426" column="17" selection-start-line="426" selection-start-column="17" selection-end-line="426" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/model/EventContactTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Candidate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="37" column="70" lean-forward="true" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
+        <state relative-caret-position="2346">
+          <caret line="169" column="48" selection-start-line="169" selection-start-column="48" selection-end-line="169" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/service/LocalDateTimeSerializerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/DataUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        <state relative-caret-position="166">
+          <caret line="214" column="64" selection-start-line="214" selection-start-column="64" selection-end-line="214" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#convertStringToBasicInformation#0;class#DataUtils#0" />
+            <element signature="method#convertYYmmDDtoDDmmYY#0;class#DataUtils#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/EventContact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/CreateListCandidates.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="200" column="51" selection-start-line="200" selection-start-column="51" selection-end-line="200" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9536#9537#0" expanded="true" />
+            <element signature="e#9626#9627#0" expanded="true" />
+            <element signature="e#12808#12809#0" expanded="true" />
+            <element signature="e#13486#13487#0" expanded="true" />
+            <element signature="e#14158#14159#0" expanded="true" />
+            <element signature="e#14826#14827#0" expanded="true" />
+            <element signature="e#15050#15051#0" expanded="true" />
+            <element signature="e#15145#15146#0" expanded="true" />
+            <element signature="e#15236#15237#0" expanded="true" />
+            <element signature="e#15347#15348#0" expanded="true" />
+            <element signature="e#15450#15451#0" expanded="true" />
+            <element signature="e#15692#15693#0" expanded="true" />
+            <element signature="e#15935#15936#0" expanded="true" />
+            <element signature="e#16069#16070#0" expanded="true" />
+            <element signature="e#16375#16376#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

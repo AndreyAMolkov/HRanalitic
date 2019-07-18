@@ -15,11 +15,10 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CreateReport {
+public class CreateListCandidates {
     ComboBox <CheckMenuItem> comboBox;
     List <TableColumn> tableColumnListAll;
     private Loger logerInstance = new Loger();
-    private List <CollectData> collectDataList;
     private List <TableColumn> tableColumnsListFirstBlock;
     private List <CheckBox> checkBoxListFirstBlock;
     private List <TableColumn> tableColumnsListSecondBlock;
@@ -33,20 +32,20 @@ public class CreateReport {
     private TableColumn <CollectData, String> dateOfComment;
     private TableColumn <CollectData, String> dateOfInterview;
     private ObservableList <CollectData> listObservable = FXCollections.observableArrayList();
-    private List <CheckMenuItem> checkMenuItemList;
+    private List<CustomMenuItem> checkMenuItemList;
+    private int counterWorkaround;
 
-    public CreateReport() {
+    public CreateListCandidates() {
     }
 
-    public CreateReport(TableView tableView) {
+    public CreateListCandidates(TableView tableView) {
         this.tableView = tableView;
     }
 
-    public CreateReport(TableView tableView, ObservableList <CollectData> listObservable, List <CollectData> collectDataList) {
-        String nameMethod = "CreateReport";
+    public CreateListCandidates(TableView tableView, ObservableList<CollectData> listObservable, List<CollectData> collectDataList) {
+        String nameMethod = "CreateListCandidates";
         this.tableView = tableView;
         this.listObservable = listObservable;
-        this.collectDataList = collectDataList;
         tableView.setItems(listObservable);
         listObservable.addAll(collectDataList);
         createFirstBlock(getTableColumnsListFirstBlock());
@@ -56,8 +55,8 @@ public class CreateReport {
     }
 
     private void createFirstBlock(List <TableColumn> tableColumnList) {
-        String nameMethod = "CreateReport";
-        loger(nameMethod, "start");
+        String nameMethod = "CreateListCandidates";
+//        loger(nameMethod, "start");
 
         TableColumn <CollectData, String> tbcPositionOfArray = new TableColumn <>("Номер");
         TableColumn <CollectData, String> tbcFIO = new TableColumn <>("ФИО");
@@ -95,12 +94,12 @@ public class CreateReport {
 //        tableView.setItems(listObservable);
         tableView.getColumns().addAll(tableColumnList);
         tableColumnsListFirstBlock.addAll(tableColumnList);
-        loger(nameMethod, "end");
+//        loger(nameMethod, "end");
     }
 
     private void createSecondBlock(List <TableColumn> tableColumnList) {
         String nameMethod = "createSecondBlock";
-        loger(nameMethod, "start");
+//        loger(nameMethod, "start");
 //        if(tableColumnsListSecondBlock ==null){
 //            this.tableColumnsListSecondBlock = new ArrayList <>();
 //        }
@@ -115,34 +114,34 @@ public class CreateReport {
         createEventBlock(tableColumnList, "commentOfCall6", "dateOfCommentOfCall6", null, "Звонок 6");
         createEventBlock(tableColumnList, "commentOfInterview", "dateOfCommentOfInterview", "dateOfInterview", "Интервью");
         createEventBlock(tableColumnList, "rejectOfInterview", "dateOfRejectOfInterview", null, "Отказ от интервью");
-        loger(nameMethod, "end");
+        //       loger(nameMethod, "end");
     }
 
     private void createThirdBlock(List <TableColumn> tableColumnList) {
         String nameMethod = "createThirdBlock";
-        loger(nameMethod, "start");
+//        loger(nameMethod, "start");
         createEventBlock(tableColumnList, "estimateHR", null, null, "Оценка HR");
         createEventBlock(tableColumnList, "commentOfHr", null, null, "Коментарий HR");
         createEventBlock(tableColumnList, "commentOfTest", null, null, "Результат теста");
         createEventBlock(tableColumnList, "generalResultOfInterview", null, null, "Результат интервью");
-        loger(nameMethod, "end");
+//        loger(nameMethod, "end");
     }
 
     private void createForthBlock(List <TableColumn> tableColumnList) {
         String nameMethod = "createForthBlock";
-        loger(nameMethod, "start");
+//        loger(nameMethod, "start");
         createEventBlock(tableColumnList, "resultOfTraining", null, null, "Результат тренинга");
         createEventBlock(tableColumnList, "notPassedTraining", null, null, "Не закончил тренинга");
         createEventBlock(tableColumnList, "estimateOFCoach", null, null, "Оценка Тренера");
         createEventBlock(tableColumnList, "resultOfAdaptation", null, null, "Результат адаптации");
-        loger(nameMethod, "end");
+//        loger(nameMethod, "end");
     }
 
 
     private void createEventBlock(List <TableColumn> tableColumnList, String commentField, String dateField, String dateArrangementField, String name) {
         String nameMethod = "createEventBlock";
         String message = getMessage(commentField, dateField, dateArrangementField, name);
-        loger(nameMethod, "for " + message);
+        //       loger(nameMethod, "for " + message);
         if (tableView == null) {
             return;
         }
@@ -152,35 +151,35 @@ public class CreateReport {
 
         List <TableColumn> list = new ArrayList <>();
         list.add(comment);
-        loger(nameMethod, "comment: " + comment);
+//        loger(nameMethod, "comment: " + comment);
 //        listObservable = dataUtiles.getLineList(listResult);
 //        tableView.setItems(listObservable);
         if (!StringUtils.isEmpty(dateField)) {
             dateOfComment = new TableColumn <>(name + " дата создания");
             dateOfComment.setCellValueFactory(new PropertyValueFactory <>(dateField));
             list.add(dateOfComment);
-            loger(nameMethod, "dateOfComment: " + dateOfComment);
+            //           loger(nameMethod, "dateOfComment: " + dateOfComment);
         }
         if (!StringUtils.isEmpty(dateArrangementField)) {
             dateOfInterview = new TableColumn <>(name + " дата назначения");
             dateOfInterview.setCellValueFactory(new PropertyValueFactory <>(dateArrangementField));
             list.add(dateOfInterview);
-            loger(nameMethod, "dateOfStart: " + dateOfInterview);
+            //           loger(nameMethod, "dateOfStart: " + dateOfInterview);
         }
         tableView.getColumns().addAll(list);
         tableColumnList.addAll(list);
     }
 
-    public List <CheckMenuItem> createCheckBoxList(List <TableColumn> tableColumnList) {
+//    public List <CheckMenuItem> createCheckBoxList(List <TableColumn> tableColumnList) {
+//
+//        List <CheckMenuItem> checkMenuItemList = new ArrayList <>();
+//        for (TableColumn one : tableColumnList) {
+//            checkMenuItemList.add(new CheckMenuItem(one.getText()));
+//        }
+//        return checkMenuItemList;
+//    }
 
-        List <CheckMenuItem> checkMenuItemList = new ArrayList <>();
-        for (TableColumn one : tableColumnList) {
-            checkMenuItemList.add(new CheckMenuItem(one.getText()));
-        }
-        return checkMenuItemList;
-    }
-
-    public List <CheckMenuItem> createCheckBoxListAll() {
+    public List<CustomMenuItem> createCheckBoxListAll() {
         tableColumnListAll = new ArrayList <>();
         tableColumnListAll.addAll(getTableColumnsListFirstBlock());
         tableColumnListAll.addAll(getTableColumnsListSecondBlock());
@@ -192,36 +191,68 @@ public class CreateReport {
         checkMenuItemList = new ArrayList <>();
         EventHandler <ActionEvent> event = new EventHandler <ActionEvent>() {
             public void handle(ActionEvent e) {
-                setVisibleTableColumn(e, ((CheckMenuItem) e.getSource()));
+                setVisibleTableColumn(e, ((CustomMenuItem) e.getSource()));
             }
         };
-
+        CheckBox checkBox;
         for (TableColumn one : tableColumnListAll) {
-            CheckMenuItem checkMenuItem = new CheckMenuItem(one.getText());
+            checkBox = new CheckBox(one.getText());
+            checkBox.setStyle("-fx-text-fill: black");
+            CustomMenuItem checkMenuItem = new CustomMenuItem(checkBox);
+            checkMenuItem.getContent().setId(one.getText());
+            checkMenuItem.setHideOnClick(false);
             checkMenuItem.setOnAction(event);
             checkMenuItemList.add(checkMenuItem);
         }
         return checkMenuItemList;
     }
 
-    private void setVisibleTableColumn(Object obj, CheckMenuItem checkMenuItem) {
-        int position = checkMenuItemList.indexOf(checkMenuItem);
-//       loger("setVisibleTableColumn","checkMenuItem " + checkMenuItem.getText());
-//        loger("setVisibleTableColumn","check position " + position);
-
+    private void setVisibleTableColumn(Object obj, CustomMenuItem checkMenuItem) {
+        if (counterWorkaround == 1) {
+            counterWorkaround = 0;
+            return;
+        }
+        ++counterWorkaround;
+//       loger("setVisibleTableColumn","checkMenuItem " + checkMenuItem.getText() );
+        Integer position = getPosition(checkMenuItem);
+        if (position == null) {
+            loger("setVisibleTableColumn", "Error: Неуспешная настройка видимости колонки, позиция не найдена для: " + checkMenuItem.getText());
+            return;
+        }
+        //       loger("setVisibleTableColumn","check position " + position);
         TableColumn tableColumn = tableColumnListAll.get(position);
         boolean visible = tableColumn.isVisible();
+//        loger("setVisibleTableColumn","tableColumn: " + tableColumn.getText() + " is " + tableColumn.isVisible());
         tableColumn.setVisible(!visible);
 
     }
 
-    //    private void setVisibleTableColumn(String name){
-//        checkMenuItemList.
-//        TableColumn tableColumn = tableColumnList.get(position);
-//        boolean visible = tableColumn.isVisible();
-//        tableColumn.setVisible(!visible);
-//
-//    }
+    private Integer getPosition(CustomMenuItem checkMenuItem) {
+        int max = checkMenuItemList.size();
+        String expected = checkMenuItem.getContent().getId();
+        String actual;
+        for (int i = 0; i < max; i++) {
+            actual = checkMenuItemList.get(i).getContent().getId();
+            if (actual.equals(expected)) {
+                return i;
+            }
+        }
+        return null;
+    }
+
+    private Integer getPosition(String checkMenuItem) {
+        int max = checkMenuItemList.size();
+        String expected = checkMenuItem;
+        String actual;
+        for (int i = 0; i < max; i++) {
+            actual = checkMenuItemList.get(i).getText();
+            if (actual.equals(expected)) {
+                return i;
+            }
+        }
+        return null;
+    }
+
     private void onChoose() {
         if (tableView.getSelectionModel().getSelectedItem() != null) {
             Candidate selectedPerson = (Candidate) tableView.getSelectionModel().getSelectedItem();
