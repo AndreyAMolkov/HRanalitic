@@ -1,7 +1,13 @@
-package model;
+package model.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import model.constats.Constants;
+import model.enums.Initiative;
+import model.enums.Project;
+import model.enums.Source;
+import model.exception.NotFoundException;
+import model.exception.WrongInputException;
 import org.apache.commons.lang3.StringUtils;
 import service.DataUtils;
 import validators.AssertBoolean;
@@ -21,7 +27,7 @@ public class Candidate {
     private String project;
     private EventContact result;
 
-    public Candidate(model.BasicInformation basicInformation, Map<String, EventContact> eventMap, String source, String initiative, String project, EventContact result, boolean callTo) throws WrongInputException, NotFoundExeption {
+    public Candidate(model.pojo.BasicInformation basicInformation, Map<String, EventContact> eventMap, String source, String initiative, String project, EventContact result, boolean callTo) throws WrongInputException, NotFoundException {
         BasicInformation = basicInformation;
         this.eventMap = eventMap;
         setSource(source);
@@ -31,7 +37,7 @@ public class Candidate {
         this.callTo = callTo;
     }
 
-    public Candidate(model.BasicInformation basicInformation, Map<String, EventContact> eventMap, String source, String initiative, String project, boolean callTo) {
+    public Candidate(model.pojo.BasicInformation basicInformation, Map<String, EventContact> eventMap, String source, String initiative, String project, boolean callTo) {
         BasicInformation = basicInformation;
         this.eventMap = eventMap;
         this.initiative = initiative;
@@ -41,7 +47,7 @@ public class Candidate {
         this.callTo = callTo;
     }
 
-    public Candidate(int position, model.BasicInformation basicInformation, Map<String, EventContact> eventMap, String initiative, String source, String project, EventContact result, boolean callTo) {
+    public Candidate(int position, model.pojo.BasicInformation basicInformation, Map<String, EventContact> eventMap, String initiative, String source, String project, EventContact result, boolean callTo) { // NOSONAR
         this.position = position;
         BasicInformation = basicInformation;
         this.eventMap = eventMap;
@@ -55,11 +61,11 @@ public class Candidate {
     public Candidate() {
     }
 
-    public model.BasicInformation getBasicInformation() {
+    public model.pojo.BasicInformation getBasicInformation() {
         return BasicInformation;
     }
 
-    public void setBasicInformation(model.BasicInformation basicInformation) {
+    public void setBasicInformation(model.pojo.BasicInformation basicInformation) {
         BasicInformation = basicInformation;
     }
 
@@ -80,7 +86,7 @@ public class Candidate {
         this.source = source;
     }
 
-    public void setSource(String source) throws WrongInputException, NotFoundExeption {
+    public void setSource(String source) throws WrongInputException, NotFoundException {
         String result = null;
         String name;
         for (Source one : Source.values()) {
@@ -93,7 +99,7 @@ public class Candidate {
             }
         }
         if (result == null) {
-            throw new NotFoundExeption(Constants.NOT_FOUND + source + Constants.FOR + DataUtils.arrayToString(Source.values()));
+            throw new NotFoundException(Constants.NOT_FOUND + source + Constants.FOR + DataUtils.arrayToString(Source.values()));
         }
         this.source = result;
     }
@@ -107,7 +113,7 @@ public class Candidate {
         this.project = project;
     }
 
-    public void setProject(String project) throws WrongInputException, NotFoundExeption {
+    public void setProject(String project) throws WrongInputException, NotFoundException {
         String result = null;
         String name;
         for (Project one : Project.values()) {
@@ -120,7 +126,7 @@ public class Candidate {
             }
         }
         if (result == null) {
-            throw new NotFoundExeption(Constants.NOT_FOUND + project + Constants.FOR + DataUtils.arrayToString(Project.values()));
+            throw new NotFoundException(Constants.NOT_FOUND + project + Constants.FOR + DataUtils.arrayToString(Project.values()));
         }
         this.project = result;
     }
@@ -142,7 +148,7 @@ public class Candidate {
         this.initiative = initiativeAlias;
     }
 
-    public void setInitiativeRussian(String initiativeRussian) throws WrongInputException, NotFoundExeption {
+    public void setInitiativeRussian(String initiativeRussian) throws WrongInputException, NotFoundException {
         String result = null;
         String name;
         for (Initiative one : Initiative.values()) {
@@ -155,7 +161,7 @@ public class Candidate {
             }
         }
         if (result == null) {
-            throw new NotFoundExeption(Constants.NOT_FOUND + initiativeRussian + Constants.FOR + DataUtils.arrayToString(Initiative.values()));
+            throw new NotFoundException(Constants.NOT_FOUND + initiativeRussian + Constants.FOR + DataUtils.arrayToString(Initiative.values()));
         }
         this.initiative = result;
     }

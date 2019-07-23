@@ -1,9 +1,9 @@
 package service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import model.Constants;
-import model.EventContact;
-import model.WrongInputException;
+import model.constats.Constants;
+import model.exception.WrongInputException;
+import model.pojo.EventContact;
 import org.junit.Test;
 
 import java.time.LocalDateTime;

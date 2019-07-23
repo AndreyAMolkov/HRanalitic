@@ -1,13 +1,16 @@
-package model;
+package model.enums;
 
-public enum Initiative implements EnumInterface {
-    //   TEMPERATURE
-    WARM("сам нашел нас"),
-    COLD("мы нашли");
+import model.constats.Constants;
+import model.exception.WrongInputException;
+
+public enum ResultOfCall implements EnumInterface {
+    HUNG_UP("повесил трубку"),
+    UNAVAILABLE("недоступен"),
+    NO_ANSWER("не берет трубку");
 
     private String name;
 
-    Initiative(String name) {
+    ResultOfCall(String name) {
         this.name = name;
     }
 
@@ -24,7 +27,7 @@ public enum Initiative implements EnumInterface {
     @Override
     public String findName(String line) throws WrongInputException {
         String result = null;
-        for (Initiative one : values()) {
+        for (ResultOfCall one : values()) {
             if (one.getName().contains(line.trim())) {
                 if (result != null) {
                     throw new WrongInputException(Constants.WRONG_FORMAT_ENUM + " нашел - " + result + ", " + one.getName());

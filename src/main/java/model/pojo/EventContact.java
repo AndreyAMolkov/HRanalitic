@@ -1,14 +1,17 @@
-package model;
+package model.pojo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import model.constats.Constants;
+import model.enums.AnswerOfCallConversation;
+import model.exception.WrongInputException;
 import org.apache.commons.lang3.StringUtils;
 import service.DataUtils;
-import service.LocalDateTimeDeserializer;
-import service.LocalDateTimeSerializer;
+import service.dateTime.LocalDateTimeDeserializer;
+import service.dateTime.LocalDateTimeSerializer;
 
 import java.io.Serializable;
 import java.time.LocalDate;

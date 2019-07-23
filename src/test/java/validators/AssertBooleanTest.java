@@ -1,7 +1,11 @@
 package validators;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import model.*;
+import model.enums.ResultOfCall;
+import model.exception.WrongInputException;
+import model.pojo.BasicInformation;
+import model.pojo.Candidate;
+import model.pojo.EventContact;
 import org.junit.Test;
 import service.DataUtils;
 

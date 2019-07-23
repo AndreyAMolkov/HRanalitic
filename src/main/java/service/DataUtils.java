@@ -3,7 +3,15 @@ package service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
-import model.*;
+import model.constats.Constants;
+import model.enums.EnumInterface;
+import model.enums.Source;
+import model.exception.NotFoundException;
+import model.exception.WrongInputException;
+import model.pojo.BasicInformation;
+import model.pojo.Candidate;
+import model.pojo.CollectData;
+import model.pojo.EventContact;
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONObject;
 
@@ -27,7 +35,7 @@ public class DataUtils {
         String result = null;
         String path;
         if (StringUtils.isEmpty(pathString)) {
-            path = "C:\\temp\\HrResecher\\base.txt";
+            path = Constants.DATA_BASE;
             //  System.out.println("Default path =" + path);
         } else {
             path = pathString;
@@ -53,7 +61,7 @@ public class DataUtils {
         List <String> result = new ArrayList <>();
         String path;
         if (StringUtils.isEmpty(pathString)) {
-            path = "C:\\temp\\HrResecher\\base.txt";
+            path = Constants.DATA_BASE;
             //  System.out.println("Default path =" + path);
         } else {
             path = pathString;
@@ -70,7 +78,7 @@ public class DataUtils {
         return result;
     }
 
-    public static List<Candidate> convertStringJsonToCandidate(List<String> listCandidates) throws WrongInputException, NotFoundExeption, IOException {
+    public static List<Candidate> convertStringJsonToCandidate(List<String> listCandidates) throws WrongInputException, NotFoundException, IOException {
         List <Candidate> result = null;
         if (listCandidates != null) {
             List <Candidate> list = new ArrayList <>();
@@ -84,7 +92,7 @@ public class DataUtils {
         return result;
     }
 
-    public static Candidate convertStringJsonToCandidate(String candidateLine) throws IOException, WrongInputException, NotFoundExeption {
+    public static Candidate convertStringJsonToCandidate(String candidateLine) throws IOException, WrongInputException, NotFoundException {
         Candidate result;
         if (StringUtils.isEmpty(candidateLine)) {
             return null;
@@ -245,7 +253,7 @@ public class DataUtils {
         return result;
     }
 
-    private static String getName(JSONObject json, List <EnumInterface> listEnum, String buffer) throws NotFoundExeption {
+    private static String getName(JSONObject json, List<EnumInterface> listEnum, String buffer) throws NotFoundException {
         String result = null;
         String alias;
 //        buffer = json.get(Constants.SOURCE).toString();
@@ -256,7 +264,7 @@ public class DataUtils {
             }
         }
         if (result == null) {
-            throw new NotFoundExeption(Constants.NOT_FOUND + result + Constants.FOR + DataUtils.arrayToString(Source.values()));
+            throw new NotFoundException(Constants.NOT_FOUND + result + Constants.FOR + DataUtils.arrayToString(Source.values()));
         }
         return result;
     }
@@ -376,32 +384,31 @@ public class DataUtils {
         return null;
     }
 
-    public static Map <String, EventContact> mapToEvent(Object object) {
-        if (object instanceof Map) {
-        } else {
-            return null;
-        }
-        EventContact eventContact;
-        Map <String, String> mapFull = (Map <String, String>) object;
-        Map <String, String> mapOne;
-        Object mapObject;
-        Iterator <String> iteratorFull = mapFull.keySet().iterator();
-        Iterator <String> iteratorOne;
-        for (String keyFull = iteratorFull.next(); iteratorFull.hasNext(); iteratorFull.next()) {
-            mapObject = mapFull.get(keyFull);
-            mapOne = (Map <String, String>) mapObject;
-            iteratorOne = mapOne.keySet().iterator();
-            for (String keyOne = iteratorOne.next(); iteratorOne.hasNext(); iteratorOne.next()) {
-
-            }
-        }
+//    public static Map <String, EventContact> mapToEvent(Object object) {
+//        if (object instanceof Map) {
+//        } else {
+//            return null;
+//        }
+//        Map <String, String> mapFull = (Map <String, String>) object;
+//        Map <String, String> mapOne;
+//        Object mapObject;
+//        Iterator <String> iteratorFull = mapFull.keySet().iterator();
+//        Iterator <String> iteratorOne;
+//        for (String keyFull = iteratorFull.next(); iteratorFull.hasNext(); iteratorFull.next()) {
+//            mapObject = mapFull.get(keyFull);
+//            mapOne = (Map <String, String>) mapObject;
+//            iteratorOne = mapOne.keySet().iterator();
+//            for (String keyOne = iteratorOne.next(); iteratorOne.hasNext(); iteratorOne.next()) {
+//
+//            }
+//        }
 
 //        String it = iterator.next();
 //        Object testitog = test.get(it);
-
-
-        return null;
-    }
+//
+//
+//        return null;
+//    }
 
     public static LocalDateTime mapToLocalDateTime(Map <String, String> map) {
         Object dateMap;
@@ -426,6 +433,9 @@ public class DataUtils {
         return LocalDateTime.of(year, month, day, hour, minute);
     }
 
+    public static List<String> toList(Object obj) throws IOException {
+        return OBJECT_MAPPER.readValue(obj.toString(), List.class);
+    }
     private EventContact collectEvent(Map <String, String> map, EventContact eventContact) {
 
         return eventContact;

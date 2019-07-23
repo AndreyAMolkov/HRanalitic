@@ -1,4 +1,7 @@
-package model;
+package model.enums;
+
+import model.constats.Constants;
+import model.exception.WrongInputException;
 
 public enum Project implements EnumInterface {
     //NAME_OF_PROJECT

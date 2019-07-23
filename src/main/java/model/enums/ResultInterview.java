@@ -1,17 +1,22 @@
-package model;
+package model.enums;
 
-public enum AnswerOfCallConversation implements EnumInterface {
-    REFUSED("отказался сам"),
-    INTERVIEW("приглашен на интервью"),
+import model.constats.Constants;
+import model.exception.WrongInputException;
+
+public enum ResultInterview implements EnumInterface {
+    TRAINING("приглашен на треннинг"),
     SPECIFICITY_OF_WORK("специфика работы"),
     MONEY("деньги"),
     SCHEDULE("график работы"),
     LOCATION("расположение"),
     FOUND_ANOTHER_JOB("нашел другую работу"),
+    OUR_INITIATIVE("отказ, наша инициатива"),
+    RESULT_OF_TESTING("результат тестирования"),
     NO_EXPLANATION("нет объяснения");
+
     private String name;
 
-    AnswerOfCallConversation(String name) {
+    ResultInterview(String name) {
         this.name = name;
     }
 
@@ -28,7 +33,7 @@ public enum AnswerOfCallConversation implements EnumInterface {
     @Override
     public String findName(String line) throws WrongInputException {
         String result = null;
-        for (AnswerOfCallConversation one : values()) {
+        for (ResultInterview one : values()) {
             if (one.getName().contains(line.trim())) {
                 if (result != null) {
                     throw new WrongInputException(Constants.WRONG_FORMAT_ENUM + " нашел - " + result + ", " + one.getName());

@@ -1,9 +1,9 @@
-package service;
+package service.dateTime;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-import model.Constants;
+import model.constats.Constants;
 
 import java.io.IOException;
 import java.time.LocalDateTime;

@@ -1,4 +1,6 @@
-package model;
+package model.enums;
+
+import model.exception.WrongInputException;
 
 public interface EnumInterface {
     String getName();
@@ -10,5 +12,4 @@ public interface EnumInterface {
     Enum[] getValues();
 
     String findName(String line) throws WrongInputException;
-    //public List<String> getListName();
 }

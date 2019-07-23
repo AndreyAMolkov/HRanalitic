@@ -1,17 +1,16 @@
-package model;
+package model.enums;
 
-public enum ResultOfAdaptation implements EnumInterface {
-    PASSED("успешно"),
-    OT_PASSED("не устроен"),
-    NEWER_COME("не пришел совсем"),
-    DID_NOT_COME_ON_2_DAY("не пришел на 2 день"),
-    DID_NOT_COME_ON_3_DAY("не пришел на 3 день"),
-    DID_NOT_PASS_QUALIFICATION("не сдал атестацию"),
-    DID_NOT_COME_ON_EMPLOYMENT("не пришел на трудоустройство");
+import model.constats.Constants;
+import model.exception.WrongInputException;
+
+public enum Initiative implements EnumInterface {
+    //   TEMPERATURE
+    WARM("сам нашел нас"),
+    COLD("мы нашли");
 
     private String name;
 
-    ResultOfAdaptation(String name) {
+    Initiative(String name) {
         this.name = name;
     }
 
@@ -28,7 +27,7 @@ public enum ResultOfAdaptation implements EnumInterface {
     @Override
     public String findName(String line) throws WrongInputException {
         String result = null;
-        for (ResultOfAdaptation one : values()) {
+        for (Initiative one : values()) {
             if (one.getName().contains(line.trim())) {
                 if (result != null) {
                     throw new WrongInputException(Constants.WRONG_FORMAT_ENUM + " нашел - " + result + ", " + one.getName());

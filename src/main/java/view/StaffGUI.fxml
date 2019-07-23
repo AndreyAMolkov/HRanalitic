@@ -438,7 +438,8 @@
                                 </AnchorPane>
                             </content>
                         </Tab>
-                        <Tab fx:id="tabListCandidates" text="Список Кандидатов">
+                        <Tab fx:id="tabListCandidates" onSelectionChanged="#onCreateSettingTabCandidates"
+                             text="Список Кандидатов">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>

@@ -1,16 +1,13 @@
-package model;
+package model.pojo;
 
 import service.DataUtils;
 
 import java.time.LocalDateTime;
 
-public class Loger {
+public class Logger {
     private String message;
     private String nameOfMethod;
     private String time;
-
-    public Loger() {
-    }
 
     public void printMessage(String nameOfMethod, String message) {
         this.message = message;

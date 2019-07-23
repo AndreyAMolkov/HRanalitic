@@ -1,6 +1,7 @@
 package view;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,11 +9,19 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import model.*;
+import model.constats.Constants;
+import model.enums.*;
+import model.exception.WrongInputException;
+import model.pojo.BasicInformation;
+import model.pojo.Candidate;
+import model.pojo.CollectData;
+import model.pojo.EventContact;
 import org.apache.commons.lang3.StringUtils;
 import service.CreateListCandidates;
 import service.DataUtils;
+import service.property.Properties;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
@@ -133,45 +142,13 @@ public class Controllers {
     @FXML
     Button buttonReport;
     private ObservableList <CollectData> observableListCandidate = FXCollections.observableArrayList();
-//    @FXML
-//    private TableColumn <CollectData, String> tbcPositionOfArray;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcFIO;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcPhone;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcSource;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcInitiative;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcProject;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcResultOFCallLast;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcInterview;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcRejectOfInterview;
-//    @FXML
-//    private TableColumn <CollectData, Integer> tbcEstimateOfHr;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcResultOfInterview;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcTraining;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcTrainingFall;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcEstimateOfCoach;
-//    @FXML
-//    private TableColumn <CollectData, String> tbcAdaptation;
-
     private List <Candidate> listCandidate;
     private ToggleGroup groupCall;
     private ToggleGroup groupAdaptation;
     private List <CollectData> collectDataList;
     private int positionSearch;
-//    public static void main(String[] args) {
-//        launch(args);
-//    }
+    private boolean firstOpenListOfCandidates;
+    private CreateListCandidates createTabOfCandidates;
 
     public static void autoResizeColumns(TableView<?> table) {
         //Set the right policy
@@ -196,40 +173,9 @@ public class Controllers {
             column.setPrefWidth(max + 10.0d);
         });
     }
-
     public void initialize() {
-//        tbcPositionOfArray.setCellValueFactory(new PropertyValueFactory <CollectData, String>("position"));
-//        tbcFIO.setCellValueFactory(new PropertyValueFactory <CollectData, String>("fio"));
-//        tbcPhone.setCellValueFactory(new PropertyValueFactory <CollectData, String>("phone"));
-//        tbcSource.setCellValueFactory(new PropertyValueFactory <CollectData, String>("source"));
-//        tbcInitiative.setCellValueFactory(new PropertyValueFactory <CollectData, String>("initiative"));
-//        tbcProject.setCellValueFactory(new PropertyValueFactory <CollectData, String>("project"));
-//        tbcResultOFCallLast.setCellValueFactory(new PropertyValueFactory <CollectData, String>("commentOfCall"));
-//        tbcInterview.setCellValueFactory(new PropertyValueFactory <CollectData, String>("commentOfInterview"));
-//        //       tbcRejectOfInterview.setCellValueFactory(new PropertyValueFactory <CollectData, String>(""));
-//        tbcEstimateOfHr.setCellValueFactory(new PropertyValueFactory <CollectData, Integer>("estimateHR"));
-//        tbcResultOfInterview.setCellValueFactory(new PropertyValueFactory <CollectData, String>("commentOfResult"));
-//        tbcTraining.setCellValueFactory(new PropertyValueFactory <CollectData, String>("resultOfTraining"));
-//        tbcTrainingFall.setCellValueFactory(new PropertyValueFactory <CollectData, String>("notPassedTraining"));
-//        tbcEstimateOfCoach.setCellValueFactory(new PropertyValueFactory <CollectData, String>("estimateOFCoach"));
-//        tbcAdaptation.setCellValueFactory(new PropertyValueFactory <CollectData, String>("resultOfAdaptation"));
-
-
-//        private String birthday;
-//
-//        // result
-//        private String dateOfCommentOfResult;
-//        private String dateTimeInterviewOfResult;
-//        //last call
-//        private String dateOfCommentOfCall;
-//        //interview
-//        private String dateOfCommentOfInterview;
-//        private String dateOfInterview;
-//        //3 block
-//        private String commentOfHr;
-//        private String commentOfTest;
-//        private String generalResultOfInterview;
-
+        firstOpenListOfCandidates = true;
+        textAreaMessage.setWrapText(true);// the new line for a message
         radioButtonCallYes.setSelected(true);
         groupCall = new ToggleGroup();
         radioButtonCallNo.setToggleGroup(groupCall);
@@ -268,18 +214,34 @@ public class Controllers {
 
             //           tableViewCandidate.setItems(observableListCandidate);
             collectDataList = DataUtils.candidateToCollectData(listCandidate);
-//            if (collectDataList != null && collectDataList.size() > 0) {
-//                observableListCandidate.addAll(collectDataList);
-//            }
+            this.createTabOfCandidates = createListCandidates();
 
         } catch (Exception e) {
             message = "ERROR: загрузка базы произошла с ошибками - " + e.toString();
             e.printStackTrace();
         }
+
         createMassage(message);
-        createListCandidates();
+
     }
 
+    public void onCreateSettingTabCandidates() {
+        String message = "Успешно применены настройки видимости списка кандидатов";
+        if (firstOpenListOfCandidates) {
+            List<String> list;
+            try {
+                list = Properties.getSettingForListCandidates();
+                for (String one : list) {
+                    createTabOfCandidates.setVisibleTableColumn(one, false);
+                }
+            } catch (IOException e) {
+                message = "Error: Ошибка применения настроек видимости кандидатов: " + e;
+            }
+            createMassage(message);
+            this.firstOpenListOfCandidates = false;
+        }
+
+    }
     public void onCreateCandidate() throws Exception {
         Candidate candidate;
         String source;
@@ -429,18 +391,8 @@ public class Controllers {
         clearAll();
     }
 
-//    @Override
-//    public void start(Stage primaryStage) throws Exception {
-//
-//
-//        Parent root = FXMLLoader.load(getClass().getResource("/view/StaffGUI.fxml"));
-//        primaryStage.setTitle("HR analytic demo");
-//        primaryStage.setScene(new Scene(root, 1200, 900));
-//        primaryStage.show();
-//    }
-
     private void createMassage(String line) {
-        textAreaMessage.setText(line);
+        Platform.runLater(() -> textAreaMessage.appendText(line + "\n"));
     }
 
     private void rewriteCandidate(Candidate candidate) throws WrongInputException {
@@ -743,15 +695,16 @@ public class Controllers {
         return true;
     }
 
-    public void createListCandidates() {
+    public CreateListCandidates createListCandidates() throws IOException {
         removeTabAll();
         ObservableList <CollectData> observableList = FXCollections.observableArrayList();
         CreateListCandidates createListCandidates = new CreateListCandidates(tableViewReport, observableList, collectDataList);
         menuReport.getItems().addAll(createListCandidates.createCheckBoxListAll());
         ObservableList<CustomMenuItem> items = FXCollections.observableArrayList();
-        items.addAll(createListCandidates.createCheckBoxListAll());
+        items.addAll(createListCandidates.getCheckMenuItemList());
         addEvent();
         autoResizeColumns(tableViewReport);
+        return createListCandidates;
     }
 
     private void addEvent() {
@@ -792,4 +745,32 @@ public class Controllers {
         }
 
     }
+
+//    public void fileOpen() {
+//        File directory = getPathFromDirectoryChooser();
+//        if (directory == null || !directory.exists()) {
+//            return;
+//        }
+//        textFieldSource.setText(directory.getPath());
+//    }
+
+//    private File getPathFromDirectoryChooser() {
+//        DirectoryChooser directoryChooser = new DirectoryChooser();
+//        directoryChooser.setInitialDirectory(new File(basePath));
+//        return directoryChooser.showDialog(null);
+//    }
+
+//    public void onCreateBasePathSetting() throws IOException {
+//        File directory = getPathFromDirectoryChooser();
+//
+//        Properties.saveProperties(BASE_PATH, directory.getPath());
+//        Properties.saveProperties(EXTENSION_FILE, Boolean.toString(checkBoxJava.isSelected()));
+//        Properties.saveProperties(TO_LOWER_CASE, Boolean.toString(checkBoxLowCase.isSelected()));
+//        Properties.saveProperties(PATH_WITH_TEST, Boolean.toString(checkBoxPathWithTest.isSelected()));
+//        Properties.saveProperties(DON_T_USE_EXTENSION, textFieldDontUseExtesion.getText().trim());
+//        basePath = directory.getPath();
+//        textFieldBasePath.setText(basePath);
+//        textFieldSource.setText(basePath);
+//    }
+
 }

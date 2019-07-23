@@ -1,5 +1,8 @@
-package model;
+package model.pojo;
 
+import model.constats.Constants;
+import model.enums.AnswerOfCallConversation;
+import model.exception.WrongInputException;
 import service.DataUtils;
 
 import java.time.LocalDateTime;
@@ -8,10 +11,10 @@ import java.util.List;
 import java.util.Map;
 
 public class CollectData {
-    private final String COMMENT = "comment";
-    private final String DATE_OF_COMMENT = "dateOfComment";
-    private final String DATE_TIME_INTERVIEW = "dateTimeInterview";
-    private Loger logerInstance = new Loger();
+    private static final String COMMENT = "comment";
+    private static final String DATE_OF_COMMENT = "dateOfComment";
+    private static final String DATE_TIME_INTERVIEW = "dateTimeInterview";
+    private Logger logerInstance = new Logger();
     private int position;
     private Candidate candidate;
 
@@ -93,7 +96,7 @@ public class CollectData {
         this.resultOfAdaptation = setOnePositionOfEvent(Constants.RESULT_OF_ADAPTATION);
     }
 
-    private String setOnePositionOfEvent(String key) throws WrongInputException {
+    private String setOnePositionOfEvent(String key) {
         Map <String, EventContact> eventMap = candidate.getEventMap();
         EventContact eventContact = getEventContact(eventMap, key);
         if (eventContact != null) {
@@ -102,7 +105,7 @@ public class CollectData {
         return "";
     }
 
-    private void setInterview(Map <String, EventContact> eventMap) {
+    private void setInterview(Map<String, EventContact> eventMap) throws WrongInputException {
         Map <String, String> map;
         EventContact eventContact = getEventContact(eventMap, Constants.INTERVIEW);
         if (eventContact != null) {
@@ -119,7 +122,7 @@ public class CollectData {
         }
     }
 
-    private void setCall(Map <String, EventContact> eventMap) {
+    private void setCall(Map<String, EventContact> eventMap) throws WrongInputException {
         setCall0(eventMap, 0);
         setCall1(eventMap, 1);
         setCall2(eventMap, 2);
@@ -129,7 +132,7 @@ public class CollectData {
         setCall6(eventMap, 6);
     }
 
-    private void setCall0(Map <String, EventContact> eventMap, int position) {
+    private void setCall0(Map<String, EventContact> eventMap, int position) throws WrongInputException {
         EventContact eventContact = getEventContact(eventMap, Constants.CALL + position);
         if (eventContact == null) {
             return;
@@ -139,7 +142,7 @@ public class CollectData {
         setDateOfCommentOfCall0(map.get(DATE_OF_COMMENT));
     }
 
-    private void setCall1(Map <String, EventContact> eventMap, int position) {
+    private void setCall1(Map<String, EventContact> eventMap, int position) throws WrongInputException {
         EventContact eventContact = getEventContact(eventMap, Constants.CALL + position);
         if (eventContact == null) {
             return;
@@ -149,7 +152,7 @@ public class CollectData {
         setDateOfCommentOfCall1(map.get(DATE_OF_COMMENT));
     }
 
-    private void setCall2(Map <String, EventContact> eventMap, int position) {
+    private void setCall2(Map<String, EventContact> eventMap, int position) throws WrongInputException {
         EventContact eventContact = getEventContact(eventMap, Constants.CALL + position);
         if (eventContact == null) {
             return;
@@ -159,7 +162,7 @@ public class CollectData {
         setDateOfCommentOfCall2(map.get(DATE_OF_COMMENT));
     }
 
-    private void setCall3(Map <String, EventContact> eventMap, int position) {
+    private void setCall3(Map<String, EventContact> eventMap, int position) throws WrongInputException {
         EventContact eventContact = getEventContact(eventMap, Constants.CALL + position);
         if (eventContact == null) {
             return;
@@ -169,7 +172,7 @@ public class CollectData {
         setDateOfCommentOfCall3(map.get(DATE_OF_COMMENT));
     }
 
-    private void setCall4(Map <String, EventContact> eventMap, int position) {
+    private void setCall4(Map<String, EventContact> eventMap, int position) throws WrongInputException {
         EventContact eventContact = getEventContact(eventMap, Constants.CALL + position);
         if (eventContact == null) {
             return;
@@ -179,7 +182,7 @@ public class CollectData {
         setDateOfCommentOfCall4(map.get(DATE_OF_COMMENT));
     }
 
-    private void setCall5(Map <String, EventContact> eventMap, int position) {
+    private void setCall5(Map<String, EventContact> eventMap, int position) throws WrongInputException {
         EventContact eventContact = getEventContact(eventMap, Constants.CALL + position);
         if (eventContact == null) {
             return;
@@ -189,7 +192,7 @@ public class CollectData {
         setDateOfCommentOfCall5(map.get(DATE_OF_COMMENT));
     }
 
-    private void setCall6(Map <String, EventContact> eventMap, int position) {
+    private void setCall6(Map<String, EventContact> eventMap, int position) throws WrongInputException {
         EventContact eventContact = getEventContact(eventMap, Constants.CALL + position);
         if (eventContact == null) {
             return;
@@ -200,28 +203,14 @@ public class CollectData {
     }
 
     private EventContact getEventContact(Map <String, EventContact> map, String key) {
-        //       try {
+
         if (map.isEmpty() || !map.containsKey(key)) {
             return null;
         }
         return map.get(key);
-////            EventContact eventContact = OBJECTMAPPER.convertValue(map.get(key), EventContact.class);
-//            Object object = map.get(key);
-//            OBJECTMAPPER.findAndRegisterModules();
-//            Map<String,String> test = (Map<String, String>) object;
-//
-//            test.keySet().size();
-//            EventContact eventContact = OBJECTMAPPER.convertValue(object, EventContact.class);
-//  //          EventContact eventContact = map.get(key);
-//            return eventContact;
-//        }catch (Exception e) {
-//            e.printStackTrace();
-//            return null;
-//        }
-
     }
 
-    private void setResultOfCandidate(EventContact eventContact) {
+    private void setResultOfCandidate(EventContact eventContact) throws WrongInputException {
         if (eventContact == null) {
             return;
         }
@@ -231,9 +220,9 @@ public class CollectData {
         this.dateTimeInterviewOfResult = map.get(DATE_TIME_INTERVIEW);
     }
 
-    private Map <String, String> getmapFromEvent(EventContact eventContact) {
+    private Map<String, String> getmapFromEvent(EventContact eventContact) throws WrongInputException {
         if (eventContact == null) {
-            return null;
+            throw new WrongInputException("EventCollect = " + null);
         }
         Map <String, String> map = new HashMap <>();
         map.put(COMMENT, eventContact.getComment());
@@ -330,15 +319,6 @@ public class CollectData {
         this.commentOfCall0 = commentOfCall0;
     }
 
-//    public LocalDateTime getDateOfCommentOfCall0() throws WrongInputException {
-//        try {
-//            return DataUtils.stringToLocalDate(dateOfCommentOfCall0);
-//        } catch (WrongInputException e) {
-//            return null;
-//        }
-//
-//    }
-
     public String getDateOfCommentOfCall0() {
         return dateOfCommentOfCall0;
     }
@@ -420,7 +400,7 @@ public class CollectData {
     }
 
     public String getCommentOfHr() {
-//        loger("getCommentOfHr", commentOfHr);
+//        logger("getCommentOfHr", commentOfHr);
         return commentOfHr;
     }
 
@@ -620,6 +600,7 @@ public class CollectData {
         String s = "";
         for (int i = 0; i < args.length; i++)
             s += "%s ";
+
         return String.format(s, args);
 
     }

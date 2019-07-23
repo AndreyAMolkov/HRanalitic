@@ -1,7 +1,14 @@
 package service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import model.*;
+import model.constats.Constants;
+import model.enums.ResultOfCall;
+import model.exception.NotFoundException;
+import model.exception.WrongInputException;
+import model.pojo.BasicInformation;
+import model.pojo.Candidate;
+import model.pojo.CollectData;
+import model.pojo.EventContact;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -77,14 +84,14 @@ public class DataUtilsTest {
     }
 
     @Test
-    public void convertStringJsonToCandidate() throws IOException, NotFoundExeption, WrongInputException {
+    public void convertStringJsonToCandidate() throws IOException, NotFoundException, WrongInputException {
         List <Candidate> result;
         result = DataUtils.convertStringJsonToCandidate(DataUtils.readFromFile(null));
         assertNotNull(result);
     }
 
     @Test
-    public void convertStringJsonToCandidateString() throws IOException, WrongInputException, NotFoundExeption {
+    public void convertStringJsonToCandidateString() throws IOException, WrongInputException, NotFoundException {
         Candidate result;
         String line = "{\"BasicInformation\":{\"name\":\"Andrey\",\"patronymic\":\"Алексеевич\",\"surname\":\"Бобков\",\"phonesList\":[\"89081628925\"],\"birthday\":\"16.12-2010\"},\"eventMap\":{\"OUR_INITIATIVE\":{\"comment\":\"не берет трубку\",\"dateOfComment\":\"2019-05-03T12:20:11.199\"}},\"temperature\":\"мы нашли\",\"source\":\"hh.ru\",\"project\":\"Хартия\"}";
         result = DataUtils.convertStringJsonToCandidate(line);
